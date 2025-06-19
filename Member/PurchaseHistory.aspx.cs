@@ -97,19 +97,19 @@ public partial class User_TopUpWallet : System.Web.UI.Page
                 {
                     hndpv.Value = "1";
                 }
-                else if (hndpackeg.Value == "Distributor Package")
+                else if (hndpackeg.Value == " Distributor Package")
                 {
                     hndpv.Value = "2";
                 }
-               else if (hndpackeg.Value == "Leader Package")
+               else if (hndpackeg.Value == " Leader Package")
                 {
                     hndpv.Value = "4";
                 }
-               else if (hndpackeg.Value == "Success Package")
+               else if (hndpackeg.Value == " Success Package")
                 {
                     hndpv.Value = "8";
                 }
-               else if (hndpackeg.Value == "Success Pro Package")
+               else if (hndpackeg.Value == " Success Pro Package")
                 {
                     hndpv.Value = "16";
                 }
