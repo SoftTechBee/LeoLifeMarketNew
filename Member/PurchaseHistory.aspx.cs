@@ -221,7 +221,7 @@ public partial class User_TopUpWallet : System.Web.UI.Page
             Qty = (Convert.ToDecimal(lbqty.Text.Trim()));
            // Discount = (Convert.ToDecimal(totaldiscount.Text.Trim()));
             BV = (Convert.ToDecimal(totalbv.Text.Trim()));
-            coupan = (Convert.ToDecimal(lbcoupanwallet.Text.Trim()));
+          //  coupan = (Convert.ToDecimal(lbcoupanwallet.Text.Trim()));
 
             //if (BV >= 1000)
             //{
