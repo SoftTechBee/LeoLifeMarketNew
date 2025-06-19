@@ -30,7 +30,7 @@ public partial class User_TopUpWallet : System.Web.UI.Page
                 loadTotal(SessionData.Get<string>("Newuser"));
                 loadaccount(SessionData.Get<string>("Newuser"));
                 txtbalance.Text = objDash.TotalWallectBlance(SessionData.Get<string>("Newuser"));
-                txtcoupanbalance.Text = objDash.CoupanWallectBlance(SessionData.Get<string>("Newuser"));
+               // txtcoupanbalance.Text = objDash.CoupanWallectBlance(SessionData.Get<string>("Newuser"));
 
                 calcu();
 
@@ -276,7 +276,7 @@ public partial class User_TopUpWallet : System.Web.UI.Page
                         loadTotal(SessionData.Get<string>("Newuser"));
                             loadaccount(SessionData.Get<string>("Newuser"));
                             txtbalance.Text = objDash.TotalWallectBlance(SessionData.Get<string>("Newuser"));
-                        txtcoupanbalance.Text = objDash.CoupanWallectBlance(SessionData.Get<string>("Newuser"));
+                        //txtcoupanbalance.Text = objDash.CoupanWallectBlance(SessionData.Get<string>("Newuser"));
 
                         SessionData.Put("StatusCSS", "text-success");
                         calcu();
