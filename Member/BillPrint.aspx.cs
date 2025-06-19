@@ -112,14 +112,14 @@ public partial class Admin_BillPrint : System.Web.UI.Page
                 if (TotalBV >= 1 && TotalBV <= 500)
                 {
                     lbgrandtotal.Text = TotalDP;
-                    lbshipping.Text = "100";
-                    lbtotalpayout.Text = (Convert.ToDecimal(TotalDP) + 100).ToString();
+                    lbshipping.Text = "Free";
+                    lbtotalpayout.Text = (Convert.ToDecimal(TotalDP)).ToString();
                 }
                 else if (TotalBV >= 501 && TotalBV <= 999)
                 {
                     lbgrandtotal.Text = TotalDP;
-                    lbshipping.Text = "200";
-                    lbtotalpayout.Text = (Convert.ToDecimal(TotalDP) + 200).ToString();
+                    lbshipping.Text = "Free";
+                    lbtotalpayout.Text = (Convert.ToDecimal(TotalDP)).ToString();
                 }
                 else
                 {

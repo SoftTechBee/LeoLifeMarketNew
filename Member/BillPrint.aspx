@@ -334,12 +334,12 @@
                                                 <div class="col-sm-6">
                                                     <div>
                                                     <span class="text-sm text-danger align-middle"><b>BILL FROM:</b></span><br />
-                                                    <span class="text-600 text-110 text-blue align-middle">Leo Life Marketing INDIA PVT. LTD.</span>
+                                                    <span class="text-600 text-110 text-blue align-middle">Leo Life Marketing.</span>
                                                 </div>
                                                 <div class="text-grey-m2">
                                                     <div class="my-1">
                                                         Lorem Ipsum is simply dummy text of the printing and typesetting industry.  Pin code - XXXXX<br />
-                                                        <i class="fa fa-envelope fa-flip-horizontal text-secondary"></i><b class="text-600">info@Leo Life Marketing.live</b>
+                                                        <i class="fa fa-envelope fa-flip-horizontal text-secondary"></i><b class="text-600">info@leolife.live</b>
                                                     </div>
 
 
@@ -377,12 +377,12 @@
                                                 <div class="col-sm-6">
                                                     <div>
                                                     <span class="text-sm text-danger align-middle"><b>SHIP FROM:</b></span><br />
-                                                    <span class="text-600 text-110 text-blue align-middle">Leo Life Marketing INDIA PVT. LTD.</span>
+                                                    <span class="text-600 text-110 text-blue align-middle">Leo Life Marketing.</span>
                                                 </div>
                                                 <div class="text-grey-m2">
                                                     <div class="my-1">
                                                         Lorem Ipsum is simply dummy text of the printing and typesetting industry Pin code - XXXXX<br />
-                                                        <i class="fa fa-envelope fa-flip-horizontal text-secondary"></i><b class="text-600">info@Leo Life Marketing.live</b>
+                                                        <i class="fa fa-envelope fa-flip-horizontal text-secondary"></i><b class="text-600">info@leolife.live</b>
                                                     </div>
 
                                                 </div>
@@ -528,8 +528,8 @@
                                                     <h7 class="card-title" style="text-align: left"><b>Terms & Condition : </b></h7>
                                                     <h6 class="card-title" style="text-align: left; font-size: 13px">E.&O.E</h6>
                                                     <h8 class="card-title" style="text-align: left; font-size: 13px; color: red">1. Good once sold shall not be accepted back.</h8><br />
-                                                    <h8 class="card-title" style="text-align: left; font-size: 13px; color: red">2. All disputes subject to Raipur, Chhattisgarh Jurisdiction Only.</h8>
-                                                    <h6 class="card-title" style="text-align: right">For <b>Leo Life Marketing INDIA PVT. LTD. </b></h6>
+                                                    <h8 class="card-title" style="text-align: left; font-size: 13px; color: red">2. All disputes subject to Hyderabad Jurisdiction Only.</h8>
+                                                    <h6 class="card-title" style="text-align: right">For <b>Leo Life Marketing. </b></h6>
                                                     <h6 class="card-title" style="text-align: right; font-size: 13px">Authorized Signatory</h6>
                                                 </div>
 
