@@ -59,12 +59,12 @@
                 ₹<asp:label ID="txtbalance"     runat="server"  Text="0" ></asp:label>
       
     </div>
-    <label class="col-lg-2 col-md-2 col-xs-6 col-sm-6">Coupan Wallet  </label>
+<%--    <label class="col-lg-2 col-md-2 col-xs-6 col-sm-6">Coupan Wallet  </label>
     <div class="ccol-lg-3 col-md-3  text-primary col-xs-6 col-sm-6">
       
                 ₹<asp:label ID="txtcoupanbalance"     runat="server"  Text="0" ></asp:label>
       
-    </div>
+    </div>--%>
               
                
 </div>
