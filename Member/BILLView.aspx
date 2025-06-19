@@ -301,7 +301,7 @@
                                             <div class="col-sm-6">
                                                 <div>
                                                     <span class="text-sm text-danger align-middle"><b>BILL FROM:</b></span><br />
-                                                    <span class="text-600 text-110 text-blue align-middle">Leo Life Marketing INDIA PVT. LTD.</span>
+                                                    <span class="text-600 text-110 text-blue align-middle">Leo Life Marketing.</span>
                                                 </div>
                                                 <div class="text-grey-m2">
                                                     <div class="my-1">
@@ -344,7 +344,7 @@
                                             <div class="col-sm-6">
                                                 <div>
                                                     <span class="text-sm text-danger align-middle"><b>SHIP FROM:</b></span><br />
-                                                    <span class="text-600 text-110 text-blue align-middle">Leo Life Marketing INDIA PVT. LTD.</span>
+                                                    <span class="text-600 text-110 text-blue align-middle">Leo Life Marketing.</span>
                                                 </div>
                                                 <div class="text-grey-m2">
                                                     <div class="my-1">
