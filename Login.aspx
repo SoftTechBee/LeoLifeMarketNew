@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0" />
 
-    <title>Login-Page | Leo Life Marketing</title>
+    <title>Login-Pages | Leo Life Marketing</title>
 
     <meta name="description" content="Success isn't given, it's built. Build yours by starting your business today." />
     <meta name="keywords" content=" Leo Life Marketing, business Leo Life Marketing, login ">
