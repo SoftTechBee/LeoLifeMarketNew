@@ -65,13 +65,13 @@
                              <!----form start---->
 
                                      <div class=" form-group row">
-                     <div class="form-group row" id="divPackages" runat="server">
+                 <%--    <div class="form-group row" id="divPackages" runat="server">
                                 <label class="control-label  col-sm-2"> Select Packages</label>
                                 <div class="col-lg-9">
                                     <asp:DropDownList runat="server" DataTextField="Product" DataValueField="PID" ID="drpPacktype" CssClass="form-control">
                                     </asp:DropDownList>
                                 </div>
-                            </div>
+                            </div>--%>
                           <label class="control-label col-lg-2">Product Name </label>
                           <div class="col-lg-4">
                          <asp:TextBox ID="txtproductname"  placeholder="Enter Product Name"    runat="server" CssClass="form-control"></asp:TextBox>
@@ -156,8 +156,8 @@
                               <th>#</th>
                                <th>Remove</th>
                               <th>Edit</th>
-                               <th>ProductName</th>
-                              <th>PackageName</th>
+                           <%--    <th>ProductName</th>
+                              <th>PackageName</th>--%>
                              
                               <th>MRP</th>
                               <th>DP</th>
@@ -179,8 +179,8 @@
                               <td><%# Container.ItemIndex+1 %></td>
                                   <td> <asp:Button ID="Button2" runat="server" Text="Remove" CommandArgument='<%#Eval("pid") %>' CommandName="Delete" CssClass=" btn btn-xxs btn-danger" /></td>
                                   <td> <asp:Button ID="Button0" runat="server" Text="Edit" CommandArgument='<%#Eval("pid") %>' CommandName="Edit" CssClass=" btn btn-xxs btn-danger" /></td>
-                                  <td><asp:Label  ID="lbname" runat="server"  Text='<%#Eval("Product") %>'></asp:Label></td>
-                                  <td><asp:Label  ID="lbpack" runat="server"  Text='<%#Eval("Packagename") %>'></asp:Label></td>
+                                 <%-- <td><asp:Label  ID="lbname" runat="server"  Text='<%#Eval("Product") %>'></asp:Label></td>
+                                  <td><asp:Label  ID="lbpack" runat="server"  Text='<%#Eval("Packagename") %>'></asp:Label></td>--%>
                                   <td><asp:Label  ID="lbmrp" runat="server"  Text='<%#Eval("MRP") %>'></asp:Label></td>
                                   <td><asp:Label  ID="lbdp" runat="server"  Text='<%#Eval("DP") %>'></asp:Label></td>
                                   <td><asp:Label  ID="lbdiscount" runat="server"  Text='<%#Eval("DISCOUNT") %>'></asp:Label></td>

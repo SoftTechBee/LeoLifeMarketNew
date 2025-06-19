@@ -66,7 +66,7 @@ public partial class Admin_Accountmaster : System.Web.UI.Page
         {
             if (hndlid.Value != "")
             {
-                int a = objamd.ProductDetails(Convert.ToInt32(hndlid.Value), Convert.ToInt32( drpPacktype.SelectedValue), Convert.ToString(drpPacktype.SelectedItem.Text), txtproductname.Text, Convert.ToDecimal(lbproductamt.Text), Convert.ToDecimal(txtmrp.Text), Convert.ToDecimal(lbdiscount.Text), Convert.ToDecimal(txtbv.Text), txtdesc.Text,hndcheque.Value, "U");
+                int a = objamd.ProductDetails(Convert.ToInt32(hndlid.Value), 0,"", txtproductname.Text, Convert.ToDecimal(lbproductamt.Text), Convert.ToDecimal(txtmrp.Text), Convert.ToDecimal(lbdiscount.Text), Convert.ToDecimal(txtbv.Text), txtdesc.Text,hndcheque.Value, "U");
                 if (a > 0)
                 {
                     lbsuccess.Text = " Pruduct Update  Successed";
@@ -82,7 +82,7 @@ public partial class Admin_Accountmaster : System.Web.UI.Page
             }
             else
             {
-                int a = objamd.ProductDetails(0, Convert.ToInt32(drpPacktype.SelectedValue), Convert.ToString(drpPacktype.SelectedItem.Text), txtproductname.Text,  Convert.ToDecimal(lbproductamt.Text), Convert.ToDecimal(txtmrp.Text), Convert.ToDecimal(lbdiscount.Text), Convert.ToDecimal(txtbv.Text), txtdesc.Text, hndcheque.Value, "N");
+                int a = objamd.ProductDetails(0, 0,"", txtproductname.Text,  Convert.ToDecimal(lbproductamt.Text), Convert.ToDecimal(txtmrp.Text), Convert.ToDecimal(lbdiscount.Text), Convert.ToDecimal(txtbv.Text), txtdesc.Text, hndcheque.Value, "N");
                 if (a > 0)
                 {
                     lbsuccess.Text = " Pruduct Add  Successed";
@@ -128,7 +128,7 @@ public partial class Admin_Accountmaster : System.Web.UI.Page
            // txtdirect.Text = lbdirect.Text;
             txtproductname.Text = name.Text;
             lbproductamt.Text = lbmrp.Text;
-            drpPacktype.SelectedItem.Text = lbpack.Text;
+           // drpPacktype.SelectedItem.Text = lbpack.Text;
             txtbv.Text = lbbv.Text;
             txtdesc.Text = lbdesc.Text;
             //string url = lbimg.Text; ;
@@ -161,8 +161,8 @@ public partial class Admin_Accountmaster : System.Web.UI.Page
     {
 
         DataTable dt1 = objcon.ReturnDataTableSql("select pid,product from TblProductMaster");
-        drpPacktype.DataSource = dt1;
-        drpPacktype.DataBind();
+       // drpPacktype.DataSource = dt1;
+        //drpPacktype.DataBind();
         //drpPacktype.Items.Insert(0, "Select Package");
 
     }
