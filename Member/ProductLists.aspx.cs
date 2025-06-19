@@ -44,11 +44,13 @@ public partial class User_Default : System.Web.UI.Page
         {
             string packid = Request.QueryString["packid"].ToString();
             string pack = Request.QueryString["pack"].ToString();
+
             string sql = "select cast(SoldRate as int) as SoldRate,* from TblProductDetails where packid='"+ packid + "' and packagename='"+ pack.Trim() + "'";
             DataTable dt = objcon.ReturnDataTableSql(sql);
             if (dt.Rows.Count > 0)
             {
                 lbpack.Text = dt.Rows[0]["PackageName"].ToString();
+                hndpackid.Value = packid;
             }
             else
             {
@@ -89,8 +91,8 @@ public partial class User_Default : System.Web.UI.Page
 
         if (e.CommandName == "Click")
         {
-            //if(Status=="Not Active")
-            {
+            ////if(Status=="Not Active")
+            //{
                 string id = e.CommandArgument.ToString();
                 DropDownList lbqty = e.Item.FindControl("lbqty") as DropDownList;
                 Label lbproduct = e.Item.FindControl("lbproduct") as Label;
@@ -99,7 +101,7 @@ public partial class User_Default : System.Web.UI.Page
                 Label lbbv = e.Item.FindControl("lbbv") as Label;
 
 
-                int b = objamd.PRODUCTBILL(0, lbproduct.Text, SessionData.Get<string>("Newuser"), "By Courier", "", Convert.ToInt32(lbqty.SelectedItem.Text), Convert.ToDecimal(lbmrp.Text), 0, Convert.ToDecimal(lbDP.Text), Convert.ToDecimal(lbbv.Text), Convert.ToDecimal(lbDP.Text), 0, 0, 0, "", "N");
+                int b = objamd.PRODUCTBILL(0, lbproduct.Text, SessionData.Get<string>("Newuser"),lbpack.Text, hndpackid.Value, Convert.ToInt32(lbqty.SelectedItem.Text), Convert.ToDecimal(lbmrp.Text), 0, Convert.ToDecimal(lbDP.Text), Convert.ToDecimal(lbbv.Text), Convert.ToDecimal(lbDP.Text), 0, 0, 0, "", "N");
                 if (b > 0)
                 {
 
@@ -125,7 +127,7 @@ public partial class User_Default : System.Web.UI.Page
 
                 }
 
-            }
+            //}
             //else
             //{
             //    danger.Visible = true;

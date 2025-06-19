@@ -37,7 +37,7 @@
                  <div class="alert alert-light  dark ">
 
                            
-                           <p class="page-title">(<asp:label ID="lbpack"     runat="server"  Text="0" ></asp:label>) <b>Product Details</b></p>
+                           <p class="page-title"><b> <asp:label ID="lbpack"     runat="server"  CssClass="text-danger" Text="0" ></asp:label> Product Details</b></p>
                        <div class="notification-box" style="text-align:right">
                           <a href="PurchaseHistory.aspx"><b>My Cart</b> <i class="fa fa-cart-plus text-danger  " ></i></a>
                            <span id="lbcart" runat="server" class="dot-animated"></span>
@@ -131,5 +131,7 @@
                 document.getElementById("modalImage").src = src;
             }
         </script>
+
+    <asp:HiddenField runat="server" ID="hndpackid" />
 </asp:Content>
 
