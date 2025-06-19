@@ -45,7 +45,7 @@ public partial class User_Default : System.Web.UI.Page
             string packid = Request.QueryString["packid"].ToString();
             string pack = Request.QueryString["pack"].ToString();
 
-            string sql = "select cast(SoldRate as int) as SoldRate,* from TblProductDetails ";
+            string sql = "select * from TblProductDetails ";
             DataTable dt = objcon.ReturnDataTableSql(sql);
             if (dt.Rows.Count > 0)
             {

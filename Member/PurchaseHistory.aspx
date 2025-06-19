@@ -201,6 +201,8 @@
 </div>
     <asp:HiddenField runat="server" ID="hndpack" />
     <asp:HiddenField runat="server" ID="hndpackeg" />
+    <asp:HiddenField runat="server" ID="hndpv" />
+    <asp:HiddenField runat="server" ID="hndpackid" />
     <script>
         // The function below will start the confirmation dialog
         function confirmAction() {

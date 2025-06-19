@@ -91,7 +91,29 @@ public partial class User_TopUpWallet : System.Web.UI.Page
                 Repeater1.DataBind();
                 hndpack.Value = dt.Rows[0]["product"].ToString();
                 hndpackeg.Value = dt.Rows[0]["Pack"].ToString();
+                //hndpackid.Value = dt.Rows[0]["Packid"].ToString();
                 lbpackeg.Text = hndpackeg.Value;
+                if (hndpackeg.Value == " Starter Package")
+                {
+                    hndpv.Value = "1";
+                }
+                else if (hndpackeg.Value == "Distributor Package")
+                {
+                    hndpv.Value = "2";
+                }
+               else if (hndpackeg.Value == "Leader Package")
+                {
+                    hndpv.Value = "4";
+                }
+               else if (hndpackeg.Value == "Success Package")
+                {
+                    hndpv.Value = "8";
+                }
+               else if (hndpackeg.Value == "Success Pro Package")
+                {
+                    hndpv.Value = "16";
+                }
+                
             }
             else
             {
@@ -128,7 +150,7 @@ public partial class User_TopUpWallet : System.Web.UI.Page
                 Decimal TotalBV = Convert.ToDecimal(totalbv.Text);
                 Decimal qty = Convert.ToDecimal(lbqty.Text);
 
-                lbtotalBV.Text = (TotalBV * qty).ToString();
+                lbtotalBV.Text = (TotalBV ).ToString();
 
 
                 if (TotalBV >= 1 && TotalBV <= 500)
@@ -212,7 +234,7 @@ public partial class User_TopUpWallet : System.Web.UI.Page
 
         {
 
-            decimal widamount = 0, Price = 0, BV = 0, Qty = 0, coupan = 0, Discount = 0;
+            decimal widamount = 0, Price = 0, BV = 0, Qty = 0, coupan = 0, Discount = 0, PVLimit = 0;
             string date = objtime.returnStringServerMachTime();
             string PackType = hndpack.Value;
             string id = SessionData.Get<string>("Newuser");
@@ -220,15 +242,15 @@ public partial class User_TopUpWallet : System.Web.UI.Page
 
             Price = (Convert.ToDecimal(totaldp.Text.Trim()));
             BV = (Convert.ToDecimal(totalbv.Text.Trim()));
+            PVLimit = (Convert.ToDecimal(hndpv.Value.Trim()));
             Qty = (Convert.ToDecimal(lbqty.Text.Trim()));
-           // Discount = (Convert.ToDecimal(totaldiscount.Text.Trim()));
-            BV = (Convert.ToDecimal(totalbv.Text.Trim()));
-          //  coupan = (Convert.ToDecimal(lbcoupanwallet.Text.Trim()));
+            // Discount = (Convert.ToDecimal(totaldiscount.Text.Trim()));
+            //  coupan = (Convert.ToDecimal(lbcoupanwallet.Text.Trim()));
 
-            //if (BV >= 1000)
-            //{
+            if (PVLimit == BV)
+            {
 
-            string OTP = OTPGenerate();
+                string OTP = OTPGenerate();
 
 
                 if (finalamount >= Price)
@@ -304,17 +326,16 @@ public partial class User_TopUpWallet : System.Web.UI.Page
                     info.Visible = true;
                     lbinfo.Text = "Less Then Balance! ";
                 }
-            //}
-            //else
-            //{
+            }
+            else
+            {
 
-            //    warning.Visible = false;
-            //    danger.Visible = false;
-            //    sccess.Visible = false;
-            //    info.Visible = false;
-            //    info.Visible = true;
-            //    lbinfo.Text = "BV Should Be 1000! ";
-            //}
+                warning.Visible = false;
+                danger.Visible = false;
+                sccess.Visible = false;
+                info.Visible = true;
+                lbinfo.Text = "PV Should Be "+ PVLimit + " For Package: "+lbpackeg.Text+" ";
+            }
         }
 
 
