@@ -61,7 +61,7 @@
                     <th> DP</th>
                     <th> Discount</th>
                       <th> PV</th>
-                      <th> Qty</th>
+                      <th> Quantity</th>
                       <th>View</th>
                   
                   

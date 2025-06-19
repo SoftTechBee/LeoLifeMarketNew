@@ -45,11 +45,11 @@ public partial class User_Default : System.Web.UI.Page
             string packid = Request.QueryString["packid"].ToString();
             string pack = Request.QueryString["pack"].ToString();
 
-            string sql = "select cast(SoldRate as int) as SoldRate,* from TblProductDetails where packid='"+ packid + "' and packagename='"+ pack.Trim() + "'";
+            string sql = "select cast(SoldRate as int) as SoldRate,* from TblProductDetails ";
             DataTable dt = objcon.ReturnDataTableSql(sql);
             if (dt.Rows.Count > 0)
             {
-                lbpack.Text = dt.Rows[0]["PackageName"].ToString();
+                lbpack.Text = pack;
                 hndpackid.Value = packid;
             }
             else
