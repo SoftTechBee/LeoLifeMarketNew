@@ -246,9 +246,14 @@
                             </a>
                         </div>--%>
 
-                        <div class="nav-item">
+                  <%--      <div class="nav-item">
                             <a href="ShopRepurchase.aspx?Id=0" class="nav-link">
                                 <i class="menu-icon bi bi-dot"></i> <span class="menu-name">Re-Purchase</span>
+                            </a>
+                        </div>--%>
+                       <div class="nav-item">
+                            <a href="PackageHistory.aspx" class="nav-link">
+                                <i class="menu-icon bi bi-dot"></i> <span class="menu-name">Package History</span>
                             </a>
                         </div>
                       

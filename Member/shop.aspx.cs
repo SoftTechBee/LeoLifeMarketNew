@@ -87,7 +87,7 @@ public partial class User_Default : System.Web.UI.Page
             string id = e.CommandArgument.ToString();
             Label lbproduct = e.Item.FindControl("lbproduct") as Label;
 
-            Response.Redirect("ProductLists.aspx?packid=" + id + "&pack= "+ lbproduct.Text);
+            Response.Redirect("ProductLists.aspx?packid=" + id + "&pack= "+ lbproduct.Text.Trim());
         }
         //if (e.CommandName == "Click")
         //{

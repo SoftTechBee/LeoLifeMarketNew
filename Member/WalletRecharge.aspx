@@ -134,7 +134,7 @@
                     <div class="form-group row align-items-center mb-3">
                         <div class="col-lg-12">
                             <center>
-                                <asp:Button ID="bntsubmit" OnClick="bntsubmit_Click" OnClientClick="return Processclick();" runat="server" Text="Request for payment" Width="300px" CssClass=" btn btn-success btn-flat btn-lg" />
+                                <asp:Button ID="bntsubmit" OnClick="bntsubmit_Click" OnClientClick="return confirmAction();" runat="server" Text="Request for payment" Width="300px" CssClass=" btn btn-success btn-flat btn-lg" />
 
                                 <%--<asp:Button ID="btncencel" runat="server" OnClick="btncencel_Click" Text="Cancel" Width="200px" CssClass="btn  btn-danger btn-lg btn-flat"  />--%>  
                                 
@@ -160,7 +160,23 @@
                 });
             }
             function Successclick() {
-                swal("Successfully!", "You clicked the button!", "success")
+                swal("Successfully!", "Your payment request has been submitted successfully. We will verify your details and process it shortly", "success")
             }
-        </script>
+      
+        // The function below will start the confirmation dialog
+        function confirmAction() {
+            let confirmAction = confirm("All data has been filled correctly. Submitting your payment request.?");
+
+            if (confirmAction) {
+                // alert("Action Successfully executed");
+                Processclick();
+                return true;
+            }
+            else {
+               // alert("Action Cancelled");
+                return false;
+            }
+        }
+      
+    </script>
 </asp:Content>

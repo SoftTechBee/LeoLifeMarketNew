@@ -13,49 +13,36 @@
      <div class="card">
       <div class="form-horizontal">
                                 <div class="card-body">
-                     <h3> Member Main Wallet Balance </h3>
+                     <h5> Member Main Wallet Balance </h5>
                  
               
               <div class="form-group row">
                      <div class=' col-lg-3'>
-        <div class="form-group row">
             <label class="control-label col-lg-4">UserName</label>
             <div class="input-group date col-lg-8" >
                 <asp:TextBox ID="txtusername" class="form-control"  runat="server" placeholder="Enter User Name" ></asp:TextBox>
-                 <span class="input-group-addon">
-                    <span class="glyphicon glyphicon-calendar"></span>
-                </span>
+             
             </div>
-        </div>
     </div>
                      <div class='  col-lg-3'>
-        <div class="form-group row">
             <label class="control-label col-lg-4">FromDate</label>
             <div class="input-group date col-lg-8" id='datetimepicker6'>
                 <asp:TextBox ID="txtfromdate" class="form-control"  type="date" runat="server" placeholder="DD-MM-YYYY" ></asp:TextBox>
-                 <span class="input-group-addon">
-                    <span class="glyphicon glyphicon-calendar"></span>
-                </span>
+                 
             </div>
         </div>
-    </div>
     <div class='col-lg-3'>
-        <div class="form-group row">
             <label class="control-label col-lg-4">ToDate</label>
             <div class="input-group date col-lg-8" id="datetimepicker7">
                  <asp:TextBox ID="txttodate" class="form-control"  type="date" runat="server" placeholder="DD-MM-YYYY" ></asp:TextBox>
-               <span class="input-group-addon">
-                    <span class="glyphicon glyphicon-calendar"></span>
-                </span>
+              
             </div>
         </div>
-    </div>
                  <div class="col-lg-2" >
-        <div class="form-group row">
              <div class=" col-lg-offset-4 col-lg-8 " >
             <asp:Button ID="btngenrate" runat="server" Text="Search" CssClass="btn btn-block btn-danger"   OnClick="btngenrate_Click"/>
-</div>
-        </div></div>
+        </div>
+                  </div>
                    
                      </div>
                 <div class="form-group row">
@@ -69,12 +56,13 @@
                     <th >Member</th>
                   <th>Name</th>
                  <th>Total Income</th>
+                 <th>View</th>
                   
                   
                 </tr>
                 </thead>
                 <tbody>
-<asp:Repeater ID="Repeater1" runat="server" >
+<asp:Repeater ID="Repeater1" runat="server"  OnItemCommand="Repeater1_ItemCommand">
    
     <ItemTemplate>
         <tr>
@@ -84,6 +72,8 @@
             <td> <%#Eval("username") %></td>
              <td> <%#Eval("name") %></td>
                <td> <%#Eval("totalincome") %></td>
+            <td> <asp:Button ID="Button1" runat="server"  Text="View" CssClass="btn  btn-block  btn-warning" CommandArgument='<%#Eval("username") %>' CommandName="View" /> </td>
+           
         </tr>
     </ItemTemplate>
 

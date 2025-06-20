@@ -18,11 +18,23 @@ public partial class Admin_rptAccount : System.Web.UI.Page
     BussinessLayer ob = new BussinessLayer();
     protected void Page_Load(object sender, EventArgs e)
     {
-        loadlist();
+        if (!IsPostBack)
+        {
+            loadlist();
+        }
     }
     protected void btngenrate_Click(object sender, EventArgs e)
     {
         loadlist();
+    }
+
+    protected void Repeater1_ItemCommand(object source, RepeaterCommandEventArgs e)
+    {
+        if (e.CommandName == "View")
+        {
+            string username = e.CommandArgument.ToString();
+            Response.Redirect("AccountUserwise.aspx?username=" + username );
+        }
     }
     private void loadlist()
     {

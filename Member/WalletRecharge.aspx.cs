@@ -116,7 +116,7 @@ public partial class User_WalletRecharge : System.Web.UI.Page
                 int a = objamd.RepuchaseRequest(0, SessionData.Get<string>("Newuser"), txtAmount.Text, hndurl.Value, "Pending", objtime.returnCurrentSurverTimeHHMM(), "", "", "", drpPaymentMode.SelectedItem.Text, txtremark.Text, "Repurchase", "N");
                 if (a > 0)
                 {
-                    lbsuccess.Text = "Fund Request sent successfully !!!";
+                    lbsuccess.Text = "Your payment request has been submitted successfully. We will verify your details and process it shortly!";
                     ScriptManager.RegisterStartupScript(this, this.GetType(), "Script", "Successclick(); ", true);
                     success.Visible = true;
                     danger.Visible = false;
@@ -128,7 +128,8 @@ public partial class User_WalletRecharge : System.Web.UI.Page
                 }
                 else if (a == -1)
                 {
-                    lbdanger.Text = "Fund Request already Sent !!!";
+                    lbdanger.Text = "Duplicate Transaction ID detected. Please verify and try again.";
+
                     danger.Visible = true;
                     success.Visible = false;
                 }

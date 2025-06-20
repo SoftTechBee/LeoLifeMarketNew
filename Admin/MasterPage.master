@@ -298,7 +298,7 @@
             </a>
             <ul>
                 
-<li><a href="rptAllWallet.aspx"><i class="material-icons-outlined">arrow_right</i>Wallet Reports</a></li>
+<li><a href="rptAccount.aspx"><i class="material-icons-outlined">arrow_right</i>All Income Reports</a></li>
 <li><a href="rptDirectIncome.aspx"><i class="material-icons-outlined">arrow_right</i> Direct Sponsor Bonus</a></li>
 <li><a href="rptDirectReferIncome.aspx"><i class="material-icons-outlined">arrow_right</i>Direct Referal Matching Bonus</a></li>
 <li><a href="rptMatchingBinaryIncome.aspx"><i class="material-icons-outlined">arrow_right</i>Matching Bonus</a></li>

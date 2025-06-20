@@ -93,9 +93,9 @@
              <td><%#DataBinder.Eval(Container.DataItem, "DOR", "{0:dd/MM/yyyy}")%></td>
           
             <td>
-    <asp:Button ID="Button1"  runat="server" CssClass="btn btn-flat btn-success" Text="Approved" CommandName="Approved"  CommandArgument='<%#Eval("RID")%>'/></td>
+    <asp:Button ID="Button1"  runat="server" CssClass="btn btn-flat btn-success" OnClientClick="return confirmAction();" Text="Approved" CommandName="Approved"  CommandArgument='<%#Eval("RID")%>'/></td>
          <td>
-    <asp:Button ID="Button2"  runat="server" CssClass="btn btn-flat btn-danger" Text="Reject" CommandName="Reject"  CommandArgument='<%#Eval("RID")%>'/></td>
+    <asp:Button ID="Button2"  runat="server" CssClass="btn btn-flat btn-danger" OnClientClick="return confirmReject();" Text="Reject" CommandName="Reject"  CommandArgument='<%#Eval("RID")%>'/></td>
        
             </tr>
     </ItemTemplate>
@@ -116,11 +116,46 @@
           <!-- /.box -->
         </div>
         <!-- /.col -->
-      </div>
-      <!-- /.row -->
-    </section>
-    <!-- /.content -->
+     <script>
+        // The function below will start the confirmation dialog
+        function confirmAction() {
+            let confirmAction = confirm("Are you Sure to Approved this Request?");
 
+            if (confirmAction) {
+                // alert("Action Successfully executed");
+                Processclick();
+
+                return true;
+            }
+            else {
+               // alert("Action Cancelled");
+                return false;
+            }
+        }
+        function confirmReject(){
+            let confirmAction = confirm("Are you Sure to Reject this Request?");
+
+            if (confirmAction) {
+                // alert("Action Successfully executed");
+                Processclick();
+                return true;
+            }
+            else {
+              //  alert("Action Cancelled");
+                return false;
+            }
+        }
+         function Processclick() {
+             swal({
+                 title: "Processing.......!",
+                 text: "Note: Do Not press back or close the app? It will close in few seconds.",
+                 imageUrl: "../SoftImg/refresh.gif",
+                 timer: 2000000,
+                 showConfirmButton: false
+             });
+         }
+        
+     </script>
     
 
 <!-- page script -->
