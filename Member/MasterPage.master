@@ -240,11 +240,11 @@
                                 <i class="menu-icon bi bi-dot"></i> <span class="menu-name">First Purchase</span>
                             </a>
                         </div>
-                        <div class="nav-item">
+  <%--                      <div class="nav-item">
                             <a href="Shop.aspx?Id=0" class="nav-link">
                                 <i class="menu-icon bi bi-dot"></i> <span class="menu-name">TopUp Purchase</span>
                             </a>
-                        </div>
+                        </div>--%>
 
                         <div class="nav-item">
                             <a href="ShopRepurchase.aspx?Id=0" class="nav-link">

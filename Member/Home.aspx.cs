@@ -55,7 +55,7 @@ public partial class Member_Default : System.Web.UI.Page
 
 
                 lblDirectRefer.Text = objdashboard.IncomeType(username, "DIRECT");
-                lblDirectMatchingBonus.Text = objdashboard.IncomeType(username, "Directmatching");
+                lblDirectMatchingBonus.Text = objdashboard.IncomeType(username, "DirectMatching");
                 lbrewardincome.Text = objdashboard.IncomeType(username, "REWARD");
                 lblSalary.Text = objdashboard.IncomeType(username, "SALARY");
                 lblMatchingBinary.Text = objdashboard.IncomeType(username, "MATCHING");

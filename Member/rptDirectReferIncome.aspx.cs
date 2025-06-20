@@ -35,7 +35,7 @@ public partial class User_Default2 : System.Web.UI.Page
     {
         try
         {
-            string sql = "select a.username,a.credit,a.debit,a.date,a.remark from account a inner join  register r on  a.username=r.username and r.status='Active' and a.valu='Directmatching' and  a.username='" + username + "'";
+            string sql = "select a.username,a.credit,a.debit,a.date,a.remark from account a inner join  register r on  a.username=r.username and r.status='Active' and a.valu='DirectMatching' and  a.username='" + username + "'";
             if (txtfromdate.Text != "" && txttodate.Text != "")
             {
                 sql += "and a.date between '" + txtfromdate.Text + "' and '" + txttodate.Text + "'";
