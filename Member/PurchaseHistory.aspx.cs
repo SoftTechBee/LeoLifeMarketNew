@@ -111,7 +111,7 @@ public partial class User_TopUpWallet : System.Web.UI.Page
                 }
                else if (hndpackeg.Value == " Success Pro Package")
                 {
-                    hndpv.Value = "16";
+                    hndpv.Value = "24";
                 }
                 
             }
