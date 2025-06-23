@@ -240,7 +240,7 @@ public partial class User_TopUpWallet : System.Web.UI.Page
             string id = SessionData.Get<string>("Newuser");
             decimal finalamount = Convert.ToDecimal(txtbalance.Text.Trim());
 
-            Price = (Convert.ToDecimal(totaldp.Text.Trim()));
+            Price = (Convert.ToDecimal(lbgrandtotal.Text.Trim()));
             BV = (Convert.ToDecimal(totalbv.Text.Trim()));
             PVLimit = (Convert.ToDecimal(hndpv.Value.Trim()));
             Qty = (Convert.ToDecimal(lbqty.Text.Trim()));
