@@ -111,7 +111,7 @@ public partial class User_TopUpWallet : System.Web.UI.Page
                 }
                else if (lbpackeg.Text == "Success Pro Package")
                 {
-                    hndpv.Value = "16";
+                    hndpv.Value = "24";
                 }
                 
             }
@@ -236,7 +236,7 @@ public partial class User_TopUpWallet : System.Web.UI.Page
 
             decimal widamount = 0, Price = 0, BV = 0, Qty = 0, coupan = 0, Discount = 0, PVLimit = 0;
             string date = objtime.returnStringServerMachTime();
-            string PackType = hndpack.Value;
+            string PackType = hndpackeg.Value;
             string id = SessionData.Get<string>("Newuser");
             decimal finalamount = Convert.ToDecimal(txtbalance.Text.Trim());
 

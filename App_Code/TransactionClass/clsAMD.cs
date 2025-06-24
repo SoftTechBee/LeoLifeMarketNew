@@ -1042,7 +1042,18 @@ namespace TripleITTransaction
 
 
         }
+        public int PowerAdd(int PID, string Username, decimal Power, string Remark, string Transaction)
+        {
 
+
+            SqlParameter ptmPID = new SqlParameter("@PID", PID);
+            SqlParameter ptmUsername = new SqlParameter("@UserName", Username);
+            SqlParameter ptmPower = new SqlParameter("@Power", Power);
+            SqlParameter ptmRemark = new SqlParameter("@Remark", Remark);
+            SqlParameter ptmTransaction = new SqlParameter("@Transaction", Transaction);
+            int status = ObjConnection.ExecuteProcedure("PowerLeg", ptmPID, ptmUsername, ptmPower, ptmRemark, ptmTransaction);
+            return status;
+        }
         public int KYCUPI(string Username, string UPI, string QRCode, string Transaction)
         {
             SqlParameter ptmUsername = new SqlParameter("@UserName", Username);

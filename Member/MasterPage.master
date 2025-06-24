@@ -231,7 +231,7 @@
                     <div class="dropdown-menu">
                         <div class="nav-item">
                             <a href="PurchaseHistory.aspx" class="nav-link">
-                                <i class="menu-icon bi bi-dot"></i> <span class="menu-name">Product Lists</span>
+                                <i class="menu-icon bi bi-dot"></i> <span class="menu-name">Price List</span>
                             </a>
                         </div>
                         

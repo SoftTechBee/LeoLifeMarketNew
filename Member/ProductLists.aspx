@@ -54,8 +54,8 @@
                 <table id="example1" class="table table-bordered table-striped table-hover " style="cellspacing:0;width:100%">
                 <thead>
                 <tr>
-                    <th >#</th>
-                  <th>Product </th>
+                    <th >S.No</th>
+                  <%--<th>Product </th>--%>
                   <th>Product Name</th>
                    <th>MRP</th>
                     <th> DP</th>
@@ -72,9 +72,9 @@
     <ItemTemplate>
         <tr>
             <td> <%# Container.ItemIndex+1 %></td>
-              <td>
+              <%--<td>
     <img id="lbimg" runat="server" src='<%#Eval("Imgurl") %>' height="50" width="50" 
-         class="img-thumbnail" style="cursor:pointer" data-bs-toggle="modal" data-bs-target="#imageModal" onclick="showImage(this.src)" /></td>
+         class="img-thumbnail" style="cursor:pointer" data-bs-toggle="modal" data-bs-target="#imageModal" onclick="showImage(this.src)" /></td>--%>
               <td><asp:Label ID="lbproduct" runat="server" Text='<%#Eval("Product") %>'></asp:Label></td>
              <td> <asp:Label ID="lbmrp"  runat="server" Text='<%#Eval("MRP") %>'></asp:Label></td>
              <td> <asp:Label ID="lbDP" runat="server"  CssClass="bold text-primary " Text='<%#Eval("DP") %>'></asp:Label></td>
@@ -98,7 +98,7 @@
              </td>
             
               
-             <td> <asp:Button ID="Button1" runat="server" Text="+ Add" CssClass="btn btn-warning " CommandArgument='<%#Eval("pid") %>' CommandName="Click" /> </td>
+             <td> <asp:Button ID="Button1" runat="server" Text="Add" CssClass="btn btn-warning " CommandArgument='<%#Eval("pid") %>' CommandName="Click" /> </td>
            
         </tr>
     </ItemTemplate>

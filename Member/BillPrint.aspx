@@ -334,11 +334,11 @@
                                                 <div class="col-sm-6">
                                                     <div>
                                                     <span class="text-sm text-danger align-middle"><b>BILL FROM:</b></span><br />
-                                                    <span class="text-600 text-110 text-blue align-middle">Leo Life Marketing.</span>
+                                                    <span class="text-600 text-110 text-blue align-middle">Leo Life Marketing Address:-</span>
                                                 </div>
                                                 <div class="text-grey-m2">
                                                     <div class="my-1">
-                                                        Lorem Ipsum is simply dummy text of the printing and typesetting industry.  Pin code - XXXXX<br />
+                                                       First Floor, Plot No.03 , Road No.3, Sai Nagar , Alkapuri 'X' Road, Nagole, Hyderabad,500068.<br />
                                                         <i class="fa fa-envelope fa-flip-horizontal text-secondary"></i><b class="text-600">info@leolife.live</b>
                                                     </div>
 
@@ -351,6 +351,9 @@
                                                         <span class="text-sm text-danger align-middle"><b>BILL TO:</b></span><br />
                                                         <span class="text-600 text-110 text-blue align-middle">NAME :
                                                             <asp:Label runat="server" ID="lbname"></asp:Label></span>
+                                                        
+                                                        <span class="text-600 text-110 text-blue align-middle">Address :
+                                                            <asp:Label runat="server" ID="lbaddressUser"></asp:Label></span>
                                                     </div>
                                                     <div class="text-grey-m2">
                                                         <div class="my-1">
@@ -377,11 +380,11 @@
                                                 <div class="col-sm-6">
                                                     <div>
                                                     <span class="text-sm text-danger align-middle"><b>SHIP FROM:</b></span><br />
-                                                    <span class="text-600 text-110 text-blue align-middle">Leo Life Marketing.</span>
+                                                    <span class="text-600 text-110 text-blue align-middle">Leo Life Marketing Address:-</span>
                                                 </div>
                                                 <div class="text-grey-m2">
                                                     <div class="my-1">
-                                                        Lorem Ipsum is simply dummy text of the printing and typesetting industry Pin code - XXXXX<br />
+                                                       First Floor, Plot No.03 , Road No.3, Sai Nagar , Alkapuri 'X' Road, Nagole, Hyderabad,500068.<br />
                                                         <i class="fa fa-envelope fa-flip-horizontal text-secondary"></i><b class="text-600">info@leolife.live</b>
                                                     </div>
 
