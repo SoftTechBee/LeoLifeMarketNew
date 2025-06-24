@@ -194,7 +194,9 @@
                   </li>
               <li><a href="Bankmaster.aspx"><i class="material-icons-outlined">arrow_right</i>Set Company QR</a>
               </li>
-                      <li><a href="NewReg.aspx"><i class="material-icons-outlined">arrow_right</i>Demo Registration</a>
+             <%--         <li><a href="NewReg.aspx"><i class="material-icons-outlined">arrow_right</i>Demo Registration</a>
+              </li>--%>
+               <li><a href="AccountPower.aspx"><i class="material-icons-outlined">arrow_right</i>Power Adding</a>
               </li>
      
                     <%--  <li><a href="AddProduct.aspx"><i class="material-icons-outlined">arrow_right</i>Add Products</a>
