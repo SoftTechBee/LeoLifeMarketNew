@@ -5,7 +5,7 @@
       <div class="card">
                             <div class="form-horizontal">
                                 <div class="card-body">
-                                    <h3>Payout UnPaid Payout   </h3>
+                                    <h4>Payout UnPaid Payout   </h4>
                                     <div class="form-group row">
                    
 
@@ -32,7 +32,7 @@
     </div>
     <div class='col-lg-4'>
         <div class="form-group row ">
-            <label class="control-label col-lg-4">FromDate</label>
+            <label class="control-label col-lg-4">ToDate</label>
             <div class="input-group date col-lg-8" id="datetimepicker7">
                  <asp:TextBox ID="txttodate" class="form-control"  type="date" runat="server" placeholder="DD-MM-YYYY" ></asp:TextBox>
                <span class="input-group-addon">
@@ -44,7 +44,7 @@
                  <div class="col-lg-2" >
         <div class="form-group row ">
              <div class=" col-lg-offset-4 col-lg-8 " >
-            <asp:Button ID="btngenrate" runat="server" Text="Search" CssClass="btn btn-block btn-foursquare"   OnClick="btngenrate_Click"/>
+            <asp:Button ID="btngenrate" runat="server" Text="Search" CssClass="btn btn-block btn-success"   OnClick="btngenrate_Click"/>
 </div>
         </div></div>
                    
@@ -72,21 +72,14 @@
                            <th>AccNo</th>
                            <th>AccHolder</th>
                        <th>Branch</th>
-                       <th>PayOut</th>
-                       <th>Admin Charge 5%</th>
-                     <th>TDS 5%</th>
                            <th>Total Income</th>
+
+                       <th>Admin Charge 13%</th>
+                     <th>TDS 2%</th>
+                       <th>PayOut</th>
                      
                    
-                      
-                    <th>IncomeType</th>      
-                          
-                            <%-- <th>Mobile</th>
-                          
-                            <th>Adhar Card</th>--%>
-                          
-                      <%--     <th>Acc Type</th>--%>
-                           
+                   
                          
                        </tr>
                          <asp:Repeater ID="Repeater1" runat="server">
@@ -98,22 +91,23 @@
                           <td><%#Eval("username") %></td>
                           <td><%#Eval("name") %></td>
                           <td>'<%#Eval("Mobile") %></td>
-                          <td>'<%#Eval("Pan") %></td>
+                          <td>'<%#Eval("PanNumber") %></td>
                                 <td><%#Eval("bankname") %></td>
                       
                            <td><%#Eval("ifsc") %></td>
-                           <td>'<%#Eval("accno") %></td>
-                           <td><%#Eval("holdername") %></td>
+                           <td>'<%#Eval("AccountNumber") %></td>
+                           <td><%#Eval("AccountHolderName") %></td>
                                     <td><%#Eval("branchname") %></td>
-                     <td> <%#Eval("Payout") %></td>
+          <td> <%#Eval("total") %></td>
+
                                    <td> <%#Eval("AdminCharge") %></td>
               <td> <%#Eval("TDS") %></td>
           
          
              
-          <td> <%#Eval("total") %></td>
-              <td> <%#Eval("BankPayment") %></td>
-              <td> <%#Eval("Type") %></td>
+                                <td> <%#Eval("Payout") %></td>
+
+             
                        
                            
                          
@@ -136,16 +130,16 @@
                                   
                                     
                                       <td class=" text text-bold ">Total</td>
-                                      <td class=" text text-bold "><asp:Label ID="lbpayout" runat="server" Text="0"></asp:Label></td>
+                                     <td class=" text text-bold "><asp:Label ID="lbTotal" runat="server" Text="0"></asp:Label></td>
+
                                       <td class=" text text-bold "><asp:Label ID="lbadminchrge" runat="server" Text="0"></asp:Label></td>
                                     
                                       <%-- <td class=" text text-bold "><asp:Label ID="lbtds" runat="server" Text="0"></asp:Label></td>
                                    --%> <td class=" text text-bold "><asp:Label ID="lbtradecharge" runat="server" Text="0"></asp:Label></td>
-                                     <td class=" text text-bold "><asp:Label ID="lbTotal" runat="server" Text="0"></asp:Label></td>
+                                      <td class=" text text-bold "><asp:Label ID="lbpayout" runat="server" Text="0"></asp:Label></td>
                                    
                                      <%--<td class=" text text-bold "><asp:Label ID="lbbankpayout" runat="server" Text="0"></asp:Label></td>
                                      --%>
-                                        <td></td>
 
 
                                  </tr>
@@ -169,7 +163,7 @@
             </div>
          <!---box  end----->
 
-        </div>
+     
 
     <!---container end----->
 

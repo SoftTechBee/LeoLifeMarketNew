@@ -45,7 +45,7 @@
  <div class="card">
                             <div class="form-horizontal">
                                 <div class="card-body">
-                                     <h4>Paid Payout After Bank Transfer</h4>
+                                     <h4>Paid Now</h4>
                  <!----form start---->
                             <div class=" form-group row">
 
@@ -85,7 +85,7 @@
                  <div class="col-lg-2" >
         <div class="form-group">
              <div class=" col-lg-offset-4 col-lg-8 " >
-            <asp:Button ID="btngenrate" runat="server" Text="Search" CssClass="btn btn-block btn-foursquare"   OnClick="btngenrate_Click"/>
+            <asp:Button ID="btngenrate" runat="server" Text="Search" CssClass="btn btn-block btn-success"   OnClick="btngenrate_Click"/>
 </div>
         </div></div>
                    
@@ -101,20 +101,20 @@
                  <tr>
                            <th>#</th>
                             <th>Paid</th>
-                  <%--        <th>Pan No</th>--%>
+              
                             <th>Name</th>
                             <th>UserName</th>
                            <th>Total Income</th>
-                     <th>TDS 5%</th>
-                     <th>Admin Charge 5%</th>
+                     <th>TDS 2%</th>
+                     <th>Admin Charge 13%</th>
                      <th>PayOut</th>
-                     <th>Income Type</th>
+                     
               
-                    <th>Net Payout</th>      
+                 <%--   <th>Net Payout</th>   --%>   
                           
-                             <%--<th>Mobile</th>
+                             <%--<th>Mobile</th>--%>
                           
-                            <th>Adhar Card</th>--%>
+                            <th>PAN</th>
                             <th>Bank</th>
                            <th>Branch</th>
                            <th>IFSC</th>
@@ -135,23 +135,23 @@
                      
                            
                         
-                        <%--  <td><%#Eval("pan") %></td>   --%>
+                        
                           <td><%#Eval("username") %></td>
                           <td><%#Eval("name") %></td>
                      <td> <%#Eval("total") %></td>
               <td> <%#Eval("TDS") %></td>
               <td> <%#Eval("AdminCharge") %></td>
               <td> <%#Eval("Payout") %></td>
-         <td> <%#Eval("Type") %></td>
-              <td> <%#Eval("BankPayment") %></td>
-                         <%-- <td><%#Eval("mobile") %></td>
+      
+            <%--  <td> <%#Eval("BankPayment") %></td>--%>
+                         <%-- <td><%#Eval("mobile") %></td>   --%>  
                         
-                           <td><%#Eval("aadhar") %></td>  --%>                      
+                              <td><%#Eval("PanNumber") %></td>                     
                            <td><%#Eval("bankname") %></td>
                            <td><%#Eval("branchname") %></td>
                            <td><%#Eval("ifsc") %></td>
-                           <td><%#Eval("accno") %></td>
-                           <td><%#Eval("holdername") %></td>
+                            <td>'<%#Eval("AccountNumber") %></td>
+                           <td><%#Eval("AccountHolderName") %></td>
                          <%--  <td><%#Eval("acctype") %></td>--%>
 
                            
@@ -165,13 +165,13 @@
                                      <td></td>
                                   
                                       <td class=" text text-bold ">Total</td>
-                                     
+                                     <td></td>
                                       <td class=" text text-bold "><asp:Label ID="lbTotal" runat="server" Text="0"></asp:Label></td>
-                                    <%-- <td class=" text text-bold "><asp:Label ID="lbtds" runat="server" Text="0"></asp:Label></td>
-                                   --%>  <td class=" text text-bold "><asp:Label ID="lbadminchrge" runat="server" Text="0"></asp:Label></td>
+                                     <td class=" text text-bold "><asp:Label ID="lbtds" runat="server" Text="0"></asp:Label></td>
+                                     <td class=" text text-bold "><asp:Label ID="lbadminchrge" runat="server" Text="0"></asp:Label></td>
                                      <td class=" text text-bold "><asp:Label ID="lbpayout" runat="server" Text="0"></asp:Label></td>
                                     
-                                     <td class=" text text-bold "><asp:Label ID="lbbankpayout" runat="server" Text="0"></asp:Label></td>
+                                     <%--<td class=" text text-bold "><asp:Label ID="lbbankpayout" runat="server" Text="0"></asp:Label></td>--%>
                                      
                                      <td></td>
                                      <td></td>

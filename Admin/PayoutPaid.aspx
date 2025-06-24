@@ -28,7 +28,7 @@
             <div class="card">
                             <div class="form-horizontal">
                                 <div class="card-body">
-                                    <h4 class="card-title">Paid Payout  </h4>
+                                    <h4 class="card-title">Paided Payout  </h4>
                  <!----form start---->
                             <div class=" form-group row">
                                 <div class="col-lg-12">
@@ -87,18 +87,18 @@
                           <th>UserName</th>
                             <th>Name</th>
                            <th>Total Income</th>
-                     <th>TDS 5%</th>
-                     <th>Admin Charge 5%</th>
+                     <th>TDS 2%</th>
+                     <th>Admin Charge 13%</th>
                    <%--  <th>Trade Charge 10%</th>--%>
 
                      <th>PayOut</th>
               
-                    <th>Net Payout</th>      
-                    <th>IncomeType</th>      
+                <%--    <th>Net Payout</th>    --%>  
+                  
                           
-                             <%--<th>Mobile</th>
+                             <%--<th>Mobile</th>--%>
                           
-                            <th>Adhar Card</th>--%>
+                            <th>PAN</th>
                             <th>Bank</th>
                            <th>Branch</th>
                            <th>IFSC</th>
@@ -116,32 +116,23 @@
                            <td><%# Container.ItemIndex+1 %></td>
                                   <td>
                               <asp:Button ID="Button1" runat="server" Text="Un-Paid" CssClass="btn btn-block btn-danger"   CommandName="Update" CommandArgument='<%#Eval("id") %>' /></td>
-                     
-                           
-                        
-                          <td><%#Eval("username") %></td>   
-                          <td><%#Eval("name") %></td>
-                     <td> <%#Eval("total") %></td>
-        <%--      <td> <%#Eval("TDS") %></td>--%>
-              <td> <%#Eval("AdminCharge") %></td>
-         <%--     <td> <%#Eval("Wallet") %></td>--%>
-              <td> <%#Eval("Payout") %></td>
-         
-              <td> <%#Eval("BankPayment") %></td>
-              <td> <%#Eval("Type") %></td>
-                         <%-- <td><%#Eval("mobile") %></td>
-                        
-                           <td><%#Eval("aadhar") %></td>  --%>                      
-                           <td><%#Eval("bankname") %></td>
-                           <td><%#Eval("branchname") %></td>
-                           <td><%#Eval("ifsc") %></td>
-                           <td>'<%#Eval("accno") %></td>
-                           <td><%#Eval("holdername") %></td>
-                         <%--  <td><%#Eval("acctype") %></td>--%>
 
-                           
-                         
-                             </tr>
+
+
+                               <td><%#Eval("username") %></td>
+                               <td><%#Eval("name") %></td>
+                               <td><%#Eval("total") %></td>
+                               <td><%#Eval("TDS") %></td>
+                               <td><%#Eval("AdminCharge") %></td>
+                               <td><%#Eval("Payout") %></td>
+                               <td><%#Eval("PanNumber") %></td>
+                               <td><%#Eval("bankname") %></td>
+                               <td><%#Eval("branchname") %></td>
+                               <td><%#Eval("ifsc") %></td>
+                               <td>'<%#Eval("AccountNumber") %></td>
+                               <td><%#Eval("AccountHolderName") %></td>
+                
+                        </tr>
                            </ItemTemplate>
                              <FooterTemplate>
                                   </FooterTemplate>
@@ -150,14 +141,14 @@
                                      <td></td>
                                   
                                       <td class=" text text-bold ">Total</td>
-                                     
+                                      <td></td>
+                                      <td></td>
                                       <td class=" text text-bold  "><asp:Label ID="lbTotal" runat="server" Text="0"></asp:Label></td>
-                                <%--     <td class=" text text-bold "><asp:Label ID="lbtds" runat="server" Text="0"></asp:Label></td>
-                                --%>     <td class=" text text-bold"><asp:Label ID="lbadminchrge" runat="server" Text="0"></asp:Label></td>
-                                     <td class=" text text-bold"><asp:Label ID="lbTRadecharge" runat="server" Text="0"></asp:Label></td>
+                                     <td class=" text text-bold "><asp:Label ID="lbtds" runat="server" Text="0"></asp:Label></td>
+                                     <td class=" text text-bold"><asp:Label ID="lbadminchrge" runat="server" Text="0"></asp:Label></td>
                                      <td class=" text text-bold"><asp:Label ID="lbpayout" runat="server" Text="0"></asp:Label></td>
                                     
-                                     <td class=" text text-bold "><asp:Label ID="lbbankpayout" runat="server" Text="0"></asp:Label></td>
+                                     <%--<td class=" text text-bold "><asp:Label ID="lbbankpayout" runat="server" Text="0"></asp:Label></td>--%>
                                      
                                      <td></td>
                                      <td></td>

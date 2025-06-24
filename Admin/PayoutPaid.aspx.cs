@@ -24,7 +24,7 @@ public partial class Admin_PayoutPaid : System.Web.UI.Page
         try
         {
             double tds = 0, total = 0, payout = 0, admchrge = 0, bank = 0, advance = 0;
-            string sql = "select p.*,r.name,r.mobile,r.pan,r.aadhar,r.email,b.accno,b.branchname,b.bankname,b.ifsc,b.holdername from register r inner join  passbook1 p on r.username=p.username left join bankdetail b on r.username=b.username where p.[Status]='Success' and p.BankPayment!='0'  ";
+            string sql = "select p.*,r.name,r.mobile,b.PanNumber,r.aadhar,r.email,b.AccountNumber,b.branchname,b.bankname,b.ifsc,b.AccountHolderName from register r inner join  passbook1 p on r.username=p.username left join TblKYC b on r.username=b.username where p.[Status]='Success' and p.BankPayment!='0'  ";
 
             //  string sql = "select p.Tid,p.date,r.pan,b.accno,b.branchname,b.bankname,b.ifsc,b.holdername ,sum(cast (p.payout as numeric(18,2))) as payout,sum(cast (p.TDS as numeric(18,2))) as TDS,sum(cast (p.AdminCharge as numeric(18,2))) as AdminCharge,sum(cast (p.Total as numeric(18,2))) as Total,sum(cast (p.BankPayment as numeric(18,2))) as BankPayment from register r inner join  passbook1 p on r.username=p.username left join bankdetail b on r.username=b.username where p.[Status]='Success' ";
             if (txtfromdate.Text != "" && txttodate.Text != "")
@@ -48,11 +48,11 @@ public partial class Admin_PayoutPaid : System.Web.UI.Page
 
                 }
             }
-           // lbtds.Text = tds.ToString();
+           lbtds.Text = tds.ToString();
             lbTotal.Text = total.ToString();
-            lbTRadecharge.Text = advance.ToString();
+          //  lbTRadecharge.Text = advance.ToString();
             lbpayout.Text = payout.ToString();
-            lbbankpayout.Text = bank.ToString();
+           // lbbankpayout.Text = bank.ToString();
             lbadminchrge.Text = admchrge.ToString();
 
             Repeater1.DataSource = dt;

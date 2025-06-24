@@ -25,7 +25,7 @@ public partial class Admin_PayoutUnpaid : System.Web.UI.Page
         try
         {
             double tds = 0, total = 0, payout = 0, admchrge = 0, bank = 0,advance=0;
-             string sql = "select p.*,r.name,r.mobile,r.pan,r.aadhar,r.email,b.accno,b.branchname,b.bankname,b.ifsc,b.holdername from register r inner join  passbook1 p on r.username=p.username left join TblKYC b on r.username=b.username where p.[Status]='Pending' and p.BankPayment!='0'  ";
+             string sql = "select p.*,r.name,r.mobile,b.PanNumber,r.aadhar,r.email,b.AccountNumber,b.branchname,b.bankname,b.ifsc,b.AccountHolderName from register r inner join  passbook1 p on r.username=p.username left join TblKYC b on r.username=b.username where p.[Status]='Pending' and p.BankPayment!='0'  ";
             //string sql = "select p.Tid,p.date,r.pan,b.accno,b.branchname,b.bankname,b.ifsc,b.holdername ,sum(cast (p.payout as numeric(18,2))) as payout,sum(cast (p.TDS as numeric(18,2))) as TDS,sum(cast (p.AdminCharge as numeric(18,2))) as AdminCharge,sum(cast (p.Total as numeric(18,2))) as Total,sum(cast (p.BankPayment as numeric(18,2))) as BankPayment from register r inner join  passbook1 p on r.username=p.username left join bankdetail b on r.username=b.username where p.[Status]='Pending' ";
             if (txtfromdate.Text != "" && txttodate.Text != "")
             {
@@ -74,8 +74,6 @@ public partial class Admin_PayoutUnpaid : System.Web.UI.Page
     {
         try
         {
-
-
             Response.Clear();
             Response.Buffer = true;
             Response.AddHeader("content-disposition", "attachment;filename=Payout.xls");
@@ -84,12 +82,55 @@ public partial class Admin_PayoutUnpaid : System.Web.UI.Page
 
             System.IO.StringWriter stringWrite = new System.IO.StringWriter();
             System.Web.UI.HtmlTextWriter htmlWrite = new HtmlTextWriter(stringWrite);
-            //     Your Repeater Name Mine is "Rep"
+
+            // Start table with border
+            Response.Write("<table border='1' style='border-collapse: collapse; width: 100%;'>");
+
+            // Manually add header row with inline styles
+            Response.Write(@"
+    <tr style='background-color: #d9d9d9; font-weight: bold; text-align: center;'>
+        <th>#</th>
+      
+                            <th>UserName</th>
+                            <th>Name</th>
+                            <th>Mobile</th>
+                            <th>Pan</th>
+                     
+                          <th>Bank</th>
+                         
+                           <th>IFSC</th>
+                           <th>AccNo</th>
+                           <th>AccHolder</th>
+                       <th>Branch</th>
+                           <th>Total Income</th>
+
+                       <th>Admin Charge 13%</th>
+                     <th>TDS 2%</th>
+                       <th>PayOut</th>
+    </tr>");
+
+            // Repeater render
             Repeater1.RenderControl(htmlWrite);
-            Response.Write("<table>");
             Response.Write(stringWrite.ToString());
+
             Response.Write("</table>");
             Response.End();
+
+
+            //Response.Clear();
+            //Response.Buffer = true;
+            //Response.AddHeader("content-disposition", "attachment;filename=Payout.xls");
+            //Response.Charset = "";
+            //Response.ContentType = "application/vnd.ms-excel";
+
+            //System.IO.StringWriter stringWrite = new System.IO.StringWriter();
+            //System.Web.UI.HtmlTextWriter htmlWrite = new HtmlTextWriter(stringWrite);
+            ////     Your Repeater Name Mine is "Rep"
+            //Repeater1.RenderControl(htmlWrite);
+            //Response.Write("<table>");
+            //Response.Write(stringWrite.ToString());
+            //Response.Write("</table>");
+            //Response.End();
 
         }
         catch (Exception ex)

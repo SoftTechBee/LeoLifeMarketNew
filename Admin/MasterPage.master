@@ -260,14 +260,13 @@
               <div class="menu-title">Financial</div>
             </a>
             <ul>
-            
-             <%-- <li><a href="Bank.aspx"><i class="material-icons-outlined">arrow_right</i>User Bank Edit</a>
-              </li>--%>
-               <li><a href="PayoutPaid.aspx"><i class="material-icons-outlined">arrow_right</i>Paid Payout</a>
+            <li><a href="PayoutUnpaid.aspx"><i class="material-icons-outlined">arrow_right</i>Payout UnPaid</a>
               </li>
-              <li><a href="PayoutUnpaid.aspx"><i class="material-icons-outlined">arrow_right</i>Payout UnPaid</a>
+          
+               <li><a href="PayoutPaid.aspx"><i class="material-icons-outlined">arrow_right</i>Paided Payout</a>
               </li>
-                <li><a href="PayoutUnpaidtoPaid.aspx"><i class="material-icons-outlined">arrow_right</i>Paid-After List</a>
+              
+                <li><a href="PayoutUnpaidtoPaid.aspx"><i class="material-icons-outlined">arrow_right</i>PaidNow List</a>
               </li>
             </ul>
           </li>
