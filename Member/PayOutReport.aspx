@@ -68,8 +68,8 @@
                                 <td><%#Eval("bankname") %></td>
                            <td><%#Eval("branchname") %></td>
                            <td><%#Eval("ifsc") %></td>
-                           <td>'<%#Eval("accno") %></td>
-                               <td><%#Eval("holdername") %></td>
+                           <td>'<%#Eval("AccountNumber") %></td>
+                               <td><%#Eval("AccountHolderName") %></td>
                             <td> <%#Eval("total") %></td>
               <td> <%#Eval("TDS") %></td>
               <td> <%#Eval("AdminCharge") %></td>

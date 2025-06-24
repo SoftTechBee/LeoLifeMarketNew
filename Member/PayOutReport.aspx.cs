@@ -34,7 +34,7 @@ public partial class User_payout : System.Web.UI.Page
         try
         {
 
-            string sql = "select p.*,r.name,r.mobile,r.pan,r.aadhar,r.email,b.accno,b.branchname,b.bankname,b.ifsc,b.holdername from register r inner join  passbook1 p on r.username=p.username left join bankdetail b on r.username=b.username where r.username='"+ SessionData.Get<string>("Newuser") + "'";
+            string sql = "select p.*,r.name,r.mobile,r.pan,r.aadhar,r.email,b.AccountNumber,b.branchname,b.bankname,b.ifsc,b.AccountHolderName from register r inner join  passbook1 p on r.username=p.username left join tblkyc b on r.username=b.username where r.username='" + SessionData.Get<string>("Newuser") + "'";
             DataTable dt = objcon.ReturnDataTableSql(sql);
             Repeater1.DataSource = dt;
             Repeater1.DataBind();
