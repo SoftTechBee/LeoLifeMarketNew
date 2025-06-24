@@ -201,7 +201,8 @@
      
                     <%--  <li><a href="AddProduct.aspx"><i class="material-icons-outlined">arrow_right</i>Add Products</a>
               </li>--%>
-            </ul>     
+            </ul>   
+              </li>
              <li>
             <a class="has-arrow" href="javascript:;">
               <div class="parent-icon"><i class="material-icons-outlined">view_agenda</i>
@@ -249,11 +250,7 @@
               </li>
               <li><a href="WalletRejectlist.aspx"><i class="material-icons-outlined">arrow_right</i>Reject List</a>
               </li>
-              <li><a href="Accountmaster.aspx"><i class="material-icons-outlined">arrow_right</i>Fund Wallet Master</a>
-              </li>
-              <li><a href="AccountMasterList.aspx"><i class="material-icons-outlined">arrow_right</i>Fund Wallet History</a>
-              </li> 
-             
+            
             </ul>
           </li>
           <li>
@@ -291,7 +288,31 @@
              
             </ul>
           </li>
-           
+            <li>
+            <a class="has-arrow" href="javascript:;">
+              <div class="parent-icon"><i class="material-icons-outlined">view_agenda</i>
+              </div>
+              <div class="menu-title">Wallet Master</div>
+            </a>
+            <ul>
+            
+             <li><a href="Accountmaster.aspx"><i class="material-icons-outlined">arrow_right</i>Fund Wallet Master</a>
+              </li>
+              <li><a href="AccountMasterList.aspx"><i class="material-icons-outlined">arrow_right</i>Fund Wallet History</a>
+              </li> 
+               <li><a href="CoupanMaster.aspx"><i class="material-icons-outlined">arrow_right</i>Coupan Wallet Master</a>
+              </li>
+              <li><a href="CoupanMasterList.aspx"><i class="material-icons-outlined">arrow_right</i>Coupan Wallet History</a>
+              </li> 
+             
+                  <li><a href="PurchaseMaster.aspx"><i class="material-icons-outlined">arrow_right</i>Purchase Wallet Master</a>
+              </li>
+              <li><a href="CoupanMasterList.aspx"><i class="material-icons-outlined">arrow_right</i>Purchase Wallet History</a>
+              </li> 
+             
+            </ul>
+          </li>
+     
           <li>
             <a class="has-arrow" href="#">
               <div class="parent-icon"><i class="material-icons-outlined">api</i>
@@ -332,8 +353,7 @@
  
 
           
-            </li>
-       
+         
           <li>
             <a class="has-arrow" href="#">
               <div class="parent-icon"><i class="material-icons-outlined">person</i>

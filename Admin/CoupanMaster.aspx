@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Admin/MasterPage.master" AutoEventWireup="true" CodeFile="Accountmaster - Copy.aspx.cs" Inherits="Admin_Accountmaster" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Admin/MasterPage.master" AutoEventWireup="true" CodeFile="CoupanMaster.aspx.cs" Inherits="Admin_Accountmaster" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
      
@@ -32,7 +32,7 @@
            <div class="page-breadcrumb mb-2">
                 <div class="row">
                     <div class="col-12 align-self-center">
-                        <h4 class="page-title">Fund Wallet Master</h4>
+                        <h4 class="page-title">Coupan Wallet Master</h4>
                     </div>
                    
                 </div>

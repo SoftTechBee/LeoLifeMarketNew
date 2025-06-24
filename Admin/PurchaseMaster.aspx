@@ -32,7 +32,7 @@
            <div class="page-breadcrumb mb-2">
                 <div class="row">
                     <div class="col-12 align-self-center">
-                        <h4 class="page-title">Fund Wallet Master</h4>
+                        <h4 class="page-title">Purchase Wallet Master</h4>
                     </div>
                    
                 </div>

@@ -38,7 +38,7 @@ public partial class Admin_Accountmaster : System.Web.UI.Page
         {
             if (rdlist.SelectedItem.Text=="Debit")
             {
-                string sql = "insert into tblwallet(username,debit,DOI,type,remark)values('"+txtusername.Text+"','"+txtAmount.Text+"','"+ objtime.returnStringServerMachTime()+ "','Admin','" + txtremarks.Text+"')";
+                string sql = "insert into tblPurchasewallet(username,debit,DOI,type,remark)values('" + txtusername.Text+"','"+txtAmount.Text+"','"+ objtime.returnStringServerMachTime()+ "','Admin','" + txtremarks.Text+"')";
                 int a=objcon.ExecuteSqlQuery(sql);
                 if (a > 0)
                 {
@@ -63,7 +63,7 @@ public partial class Admin_Accountmaster : System.Web.UI.Page
             }
             else if (rdlist.SelectedItem.Text == "Credit")
             {
-                string sql = "insert into tblwallet(username,Credit,DOI,type,remark)values('" + txtusername.Text + "','" + txtAmount.Text + "','" + objtime.returnStringServerMachTime() + "','Admin','" + txtremarks.Text + "')";
+                string sql = "insert into tblPurchasewallet(username,Credit,DOI,type,remark)values('" + txtusername.Text + "','" + txtAmount.Text + "','" + objtime.returnStringServerMachTime() + "','Admin','" + txtremarks.Text + "')";
                 int a = objcon.ExecuteSqlQuery(sql);
                 if (a > 0)
                 {
