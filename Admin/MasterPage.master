@@ -307,7 +307,7 @@
              
                   <li><a href="PurchaseMaster.aspx"><i class="material-icons-outlined">arrow_right</i>Purchase Wallet Master</a>
               </li>
-              <li><a href="CoupanMasterList.aspx"><i class="material-icons-outlined">arrow_right</i>Purchase Wallet History</a>
+              <li><a href="PurchaseMasterList.aspx"><i class="material-icons-outlined">arrow_right</i>Purchase Wallet History</a>
               </li> 
              
             </ul>
