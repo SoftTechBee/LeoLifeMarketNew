@@ -92,24 +92,24 @@ public partial class User_TopUpWallet : System.Web.UI.Page
                 hndpack.Value = dt.Rows[0]["product"].ToString();
                 hndpackeg.Value = dt.Rows[0]["Pack"].ToString();
                 //hndpackid.Value = dt.Rows[0]["Packid"].ToString();
-                lbpackeg.Text = hndpackeg.Value;
-                if (hndpackeg.Value == " Starter Package")
+                lbpackeg.Text = hndpackeg.Value.Trim();
+                if (lbpackeg.Text == "Starter Package")
                 {
                     hndpv.Value = "1";
                 }
-                else if (hndpackeg.Value == " Distributor Package")
+                else if (lbpackeg.Text == "Distributor Package")
                 {
                     hndpv.Value = "2";
                 }
-               else if (hndpackeg.Value == " Leader Package")
+               else if (lbpackeg.Text == "Leader Package")
                 {
                     hndpv.Value = "4";
                 }
-               else if (hndpackeg.Value == " Success Package")
+               else if (lbpackeg.Text == "Success Package")
                 {
                     hndpv.Value = "8";
                 }
-               else if (hndpackeg.Value == " Success Pro Package")
+               else if (lbpackeg.Text == "Success Pro Package")
                 {
                     hndpv.Value = "16";
                 }
@@ -240,14 +240,14 @@ public partial class User_TopUpWallet : System.Web.UI.Page
             string id = SessionData.Get<string>("Newuser");
             decimal finalamount = Convert.ToDecimal(txtbalance.Text.Trim());
 
-            Price = (Convert.ToDecimal(totaldp.Text.Trim()));
+            Price = (Convert.ToDecimal(lbgrandtotal.Text.Trim()));
             BV = (Convert.ToDecimal(totalbv.Text.Trim()));
             PVLimit = (Convert.ToDecimal(hndpv.Value.Trim()));
             Qty = (Convert.ToDecimal(lbqty.Text.Trim()));
             // Discount = (Convert.ToDecimal(totaldiscount.Text.Trim()));
             //  coupan = (Convert.ToDecimal(lbcoupanwallet.Text.Trim()));
 
-            if (PVLimit == BV)
+            if (PVLimit == BV && PVLimit!=0)
             {
 
                 string OTP = OTPGenerate();
