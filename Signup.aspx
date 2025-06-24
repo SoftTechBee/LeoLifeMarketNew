@@ -161,7 +161,7 @@
       <%--      <div class="authentication-inner">--%>
                 <!-- Register -->
                 <div class="card">
-                   <div class="card-body" style=" -webkit-box-shadow: 0px 0px 10px 5px rgba(255,255,255,1); -moz-box-shadow: 0px 0px 10px 5px rgba(255,255,255,1); box-shadow: 0px 0px 10px 5px #000000;">
+                   <div class="card-body" >
                     
                         <!-- Logo -->
                         <div class="app-brand justify-content-center">
@@ -215,7 +215,12 @@
                              <div class="mb-1">
                                 <label for="email" class="form-label">Full Name</label>
                                   <asp:TextBox ID="txtName"  required="" runat="server" class="form-control" placeholder="Full Name"></asp:TextBox>
-                            </div>
+                            </div>  
+              <div class="mb-1">
+                  <label for="email" class="form-label"> Delivery Address</label>
+
+                   <asp:TextBox ID="txtAddress" runat="server" TextMode="MultiLine" required="" Height="50px"  class="form-control" placeholder=" Delivery  Address With PinCode"></asp:TextBox>              
+                </div>
                             
                              <div class="mb-1 mb-2">
                                 <label for="email" class="form-label">Country</label>

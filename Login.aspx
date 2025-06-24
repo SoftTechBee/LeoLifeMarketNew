@@ -66,9 +66,10 @@
     <div class="container-xxl" >
         <div class="authentication-wrapper authentication-basic container-p-y">
            <%-- <div class="authentication-inner">--%>
+            <%--style=" -webkit-box-shadow: 0px 0px 10px 5px rgba(255,255,255,1); -moz-box-shadow: 0px 0px 10px 5px rgba(255,255,255,1); box-shadow: 0px 0px 10px 5px #000000;"--%>
                 <!-- Register -->
                 <div class="card">
-                    <div class="card-body" style=" -webkit-box-shadow: 0px 0px 10px 5px rgba(255,255,255,1); -moz-box-shadow: 0px 0px 10px 5px rgba(255,255,255,1); box-shadow: 0px 0px 10px 5px #000000;">
+                    <div class="card-body" >
                         <!-- Logo -->
                         <div class="app-brand justify-content-center">
                      

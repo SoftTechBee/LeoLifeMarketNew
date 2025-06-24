@@ -59,7 +59,7 @@ public partial class Signup : System.Web.UI.Page
     public void loadCountry()
     {
 
-        DataTable dt1 = objcon.ReturnDataTableSql("select cid,Country,code from tblcountry  order by Country asc");
+        DataTable dt1 = objcon.ReturnDataTableSql(" SELECT cid, Country, code  FROM tblcountry ORDER BY  CASE WHEN Country = 'India' THEN 0 ELSE 1 END, Country ASC");
         drpcountry.DataSource = dt1;
         drpcountry.DataBind();
         drpcountry.Items.Insert(0, "Select Country");
@@ -175,7 +175,7 @@ public partial class Signup : System.Web.UI.Page
                     string DOB = "";
 
 
-                    int a = objamd.Register(0, lbsponserid.Text, lbSponsermsg.Text, txtName.Text, UserName, txtPassword.Text, "", txtName.Text, side, DOJ, "", "", "", drpcountry.SelectedItem.Text, txtemail.Text, txtMobile.Text, "Not Active", "", "", "", "", "", "", "", DOB, txtpin.Text, "", "", "", "", "", DOJ, "", DOJ, TransactionPassword, "../SoftImg/NoImage.jpeg", lbsponserid.Text, lbSponsermsg.Text, "N");
+                    int a = objamd.Register(0, lbsponserid.Text, lbSponsermsg.Text, txtName.Text, UserName, txtPassword.Text, "", txtName.Text, side, DOJ, txtAddress.Text, "", "", drpcountry.SelectedItem.Text, txtemail.Text, txtMobile.Text, "Not Active", "", "", "", "", "", "", "", DOB, txtpin.Text, "", "", "", "", "", DOJ, "", DOJ, TransactionPassword, "../SoftImg/NoImage.jpeg", lbsponserid.Text, lbSponsermsg.Text, "N");
                     if (a > 0)
                     {
                         objmail.sendpass(txtName.Text, UserName, txtPassword.Text, TransactionPassword, txtemail.Text.Trim());

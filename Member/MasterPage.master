@@ -263,6 +263,11 @@
                                 <i class="menu-icon bi bi-dot"></i> <span class="menu-name">Invoice</span>
                             </a>
                         </div>
+                        <div class="nav-item">
+                            <a href="https://www.google.com/url?sa=t&source=web&rct=j&opi=89978449&url=https://www.gmsworldwide.com/&ved=2ahUKEwiXk6SZ7ImOAxU7slYBHQLRKeAQFnoECDQQAQ&sqi=2&usg=AOvVaw0vTFMa_2cck-anw8aY7qqV" class="nav-link">
+                                <i class="menu-icon bi bi-dot"></i> <span class="menu-name">Product Tracking</span>
+                            </a>
+                        </div>
                       
                     </div>
                 </li>

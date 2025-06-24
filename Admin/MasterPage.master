@@ -183,6 +183,8 @@
               </li>
               <li><a href="userpassword.aspx"><i class="material-icons-outlined">arrow_right</i>All Password</a>
               </li>
+                <li><a href="ChangePassword.aspx"<i class="material-icons-outlined">arrow_right</i>Chnage Admin Pass</a>
+              </li>
               <li><a href="rptmemberProfileAccess.aspx"><i class="material-icons-outlined">arrow_right</i>Profile Access</a>
               </li>
               <li><a href="setnews.aspx"><i class="material-icons-outlined">arrow_right</i>Set News</a>
@@ -283,7 +285,8 @@
               <li><a href="InActiveuser.aspx"><i class="material-icons-outlined">arrow_right</i>InActive Member</a>
               </li> 
                 <li><a href="InvoiceList.aspx"><i class="material-icons-outlined">arrow_right</i>User Invoice</a>
-              </li>
+              </li> 
+              
              
             </ul>
           </li>
