@@ -183,8 +183,8 @@
               </li>
               <li><a href="userpassword.aspx"><i class="material-icons-outlined">arrow_right</i>All Password</a>
               </li>
-                <li><a href="ChangePassword.aspx"<i class="material-icons-outlined">arrow_right</i>Chnage Admin Pass</a>
-              </li>
+                <li><a href="ChangePassword.aspx"><i class="material-icons-outlined">arrow_right</i>Change Admin Pass</a></li>
+             
               <li><a href="rptmemberProfileAccess.aspx"><i class="material-icons-outlined">arrow_right</i>Profile Access</a>
               </li>
               <li><a href="setnews.aspx"><i class="material-icons-outlined">arrow_right</i>Set News</a>
@@ -232,7 +232,16 @@
             
               <li><a href="AddProduct.aspx"><i class="material-icons-outlined">arrow_right</i>Add Proudct</a>
               </li>
-        
+                <li><a href="InvoiceList.aspx"><i class="material-icons-outlined">arrow_right</i>User Invoice</a>
+              </li> 
+         <li><a href="OTPList.aspx"><i class="material-icons-outlined">arrow_right</i>Delivery Pending</a>
+              </li> 
+           <li><a href="OTPListDelivered.aspx"><i class="material-icons-outlined">arrow_right</i>Delivery Success</a>
+              </li> 
+              
+             
+                
+             
             </ul>
           </li>
        
@@ -284,8 +293,7 @@
               </li>
               <li><a href="InActiveuser.aspx"><i class="material-icons-outlined">arrow_right</i>InActive Member</a>
               </li> 
-                <li><a href="InvoiceList.aspx"><i class="material-icons-outlined">arrow_right</i>User Invoice</a>
-              </li> 
+                
               
              
             </ul>
@@ -306,12 +314,10 @@
               </li>
               <li><a href="CoupanMasterList.aspx"><i class="material-icons-outlined">arrow_right</i>Coupan Wallet History</a>
               </li> 
-             
-                  <li><a href="PurchaseMaster.aspx"><i class="material-icons-outlined">arrow_right</i>Purchase Wallet Master</a>
+               <li><a href="PurchaseMaster.aspx"><i class="material-icons-outlined">arrow_right</i>Purchase Wallet</a>
               </li>
-              <li><a href="PurchaseMasterList.aspx"><i class="material-icons-outlined">arrow_right</i>Purchase Wallet History</a>
+              <li><a href="PurchaseMasterList.aspx"><i class="material-icons-outlined">arrow_right</i>Wallet History</a>
               </li> 
-             
             </ul>
           </li>
      
