@@ -67,14 +67,15 @@
                         var details = '<h6>Member ID: ' + maindata[0].username + '</h6>'
                             + '<h6>Name: ' + maindata[0].name + '</h6>'
                             + '<h6>Reff ID: ' + maindata[0].reffid + '</h6>'
+                            + '<h6>Upline ID: ' + maindata[0].Upline + '</h6>'
                             + '<h6>Total Left Team: ' + maindata[0].leftteam + '</h6>'
                             + '<h6>Total Right Team: ' + maindata[0].rightteam + '</h6>'
                             + '<h6>Active Left Team: ' + maindata[0].leftactiveteam + '</h6>'
                             + '<h6>Active Right Team: ' + maindata[0].rightactiveteam + '</h6>'
-                            + '<h6>Current Left Business: ' + maindata[0].CurrentLeftBus + '</h6>'
-                            + '<h6>Current Right Business: ' + maindata[0].CurrentRightBus + '</h6>'
-                            + '<h6>Total Left Business: ' + maindata[0].TotalLeftBus + '</h6>'
-                            + '<h6>Total Right Business: ' + maindata[0].TotalRightBus + '</h6>'
+                            //+ '<h6>Current Left Business: ' + maindata[0].CurrentLeftBus + '</h6>'
+                            //+ '<h6>Current Right Business: ' + maindata[0].CurrentRightBus + '</h6>'
+                            //+ '<h6>Total Left Business: ' + maindata[0].TotalLeftBus + '</h6>'
+                            //+ '<h6>Total Right Business: ' + maindata[0].TotalRightBus + '</h6>'
                             + '<h6>Current Left PV: ' + maindata[0].CurrentLeftPV + '</h6>'
                             + '<h6>Current Right PV: ' + maindata[0].CurrentRightPV + '</h6>'
                             + '<h6>Total Left PV: ' + maindata[0].TotalLeftPV + '</h6>'
@@ -117,6 +118,48 @@
                     </div>
                 </div>
             </div>
+
+
+     <div class="container mt-4">
+  <div class="row g-3 justify-content-between">
+
+    <div class="col-4 col-sm-4 col-md-2 image-box">
+      <img src="../TreeCode/TreeImg/V.png" alt="Image 1">
+      <p>Placement</p>
+    </div>
+
+    <div class="col-4 col-sm-4 col-md-2 image-box">
+      <img src="../TreeCode/TreeImg/R.png" alt="Image 2">
+      <p>Registration</p>
+    </div>
+
+    <div class="col-4 col-sm-4 col-md-2 image-box">
+      <img src="../TreeCode/TreeImg/G.png" alt="Image 3">
+      <p>Starter</p>
+    </div>
+
+    <div class="col-4 col-sm-4 col-md-2 image-box">
+      <img src="../TreeCode/TreeImg/B.png" alt="Image 4">
+      <p>Distributor</p>
+    </div>
+
+    <div class="col-4 col-sm-4 col-md-2 image-box">
+      <img src="../TreeCode/TreeImg/P.png" alt="Image 5">
+      <p>Leader</p>
+    </div>
+
+    <div class="col-4 col-sm-4 col-md-2 image-box">
+      <img src="../TreeCode/TreeImg/VI.png" alt="Image 6">
+      <p>Success</p>
+    </div>
+
+    <div class="col-4 col-sm-4 col-md-2 image-box">
+      <img src="../TreeCode/TreeImg/GO.png" alt="Image 7">
+      <p>Success Pro</p>
+    </div>
+
+  </div>
+</div>
                   <input type="hidden" id="hnduserid1" runat="server" />
                   <input type="hidden" id="hnduserid2" runat="server" />
                   <input type="hidden" id="hnduserid3" runat="server" />

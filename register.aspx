@@ -196,17 +196,17 @@
                            
                             <asp:Label ID="msg" Text="" CssClass=" text-danger " runat="server"></asp:Label>
                               <div class="mb-1 row">
-                                <div class="col-lg-6">
+                                <div class="col-lg-12">
 
                                 <label for="email" class="form-label">Select Side</label>
                                   <asp:TextBox ID="drpside" ReadOnly="true"  required="" runat="server" class="form-control" ></asp:TextBox>
                               </div>
 
-                                <div class="col-lg-6">
+                             <%--   <div class="col-lg-6">
                                        <label for="email" class="form-label">Area Pincode</label>
                                   <asp:TextBox ID="txtpin"  required="" runat="server" class="form-control" placeholder="Area Pincode"></asp:TextBox>
                          
-                              </div>
+                              </div>--%>
                               </div>
                             
                              <div class="mb-1">
@@ -214,7 +214,7 @@
                                   <asp:TextBox ID="txtName"  required="" runat="server" class="form-control" placeholder="Full Name"></asp:TextBox>
                             </div>
                             <div class="mb-1">
-                  <label for="email" class="form-label"> Delivery Address</label>
+                  <label for="email" class="form-label">Product Delivery Address</label>
 
                    <asp:TextBox ID="txtAddress" runat="server" TextMode="MultiLine" required="" Height="50px"  class="form-control" placeholder=" Delivery  Address With PinCode "></asp:TextBox>              
                 </div>
