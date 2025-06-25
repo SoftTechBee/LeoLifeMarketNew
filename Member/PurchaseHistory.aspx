@@ -148,6 +148,8 @@
   <div class="cart-sub-total total">
 						<span>Package Name:</span> <span><asp:Label ID="lbpackeg" runat="server"  CssClass="text-primary"></asp:Label></span>
 					</div>
+                                   
+                                   
 
                     <div class="col-md-4 col-sm-12 cart-shopping-total">
 	<table class="table">
@@ -182,14 +184,25 @@
 </div>
                 </div>
                               <br />  
+                                 <div class="cart-sub-total total">
+						<span>Delivery Type:</span> <span> <asp:DropDownList ID="drpdeliverytype" runat="server" Width="40%"  CssClass="mt-2 text-primary form-control">
+                            <asp:ListItem >Store Pickup</asp:ListItem>
+                            <asp:ListItem >Home Delivery</asp:ListItem>
+						                                   </asp:DropDownList></span>
+					</div>
+                                
                  <div class="col-sm-12" style="text-align:right;">
                
                             
                                   <div class="col-sm-12">
-                                  <asp:Button ID="btncheckout" OnClick="btncheckout_Click" OnClientClick="return confirmAction();"  runat="server" Text="Pay Now"   class=" btn btn-warning btn-sm" />
-               </div>
+                                  <asp:Button ID="btncheckout" OnClick="btncheckout_Click" OnClientClick="return confirmAction();"  runat="server" Text="Pay Now"   class=" btn btn-warning" />
+                                        </div>
 </div>
+                                <hr /><p style="color: red;font-size:100% ">
+  Note: Home Delivery selected?. Please make sure your address is complete. Go to Edit Profile to add or update it before making the purchase.
+</p>
             </div>
+                     
             <!-- /.box-body -->
           </div>
           <!-- /.box -->
@@ -199,6 +212,8 @@
            
 </div>
 </div>
+       <!-- /.box-body -->
+               
     <asp:HiddenField runat="server" ID="hndpack" />
     <asp:HiddenField runat="server" ID="hndpackeg" />
     <asp:HiddenField runat="server" ID="hndpv" />

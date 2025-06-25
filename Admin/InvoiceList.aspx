@@ -56,6 +56,8 @@
                     <th>Total Discount</th>
                       <th>Total PV</th>
                       <th>Delivery OTP</th>
+                    <th>DeliveryType</th>
+                      <th>PickupAddress&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</th>
                       <th>View</th>
                   
                   
@@ -77,6 +79,8 @@
                <td> <%#Eval("DiscountAmt") %></td>
                <td> <%#Eval("TotalBV") %></td>
                <td> <%#Eval("DeliveryOTP") %></td>
+             <td> <%#Eval("DeliveryType") %></td>
+               <td> <%#Eval("PickupAddress") %></td>
              <td> <asp:Button ID="Button1" runat="server" Text="Invoice" CssClass="btn  btn-block btn-danger" CommandArgument='<%#Eval("InvoiceNo") %>' CommandName="View" /> </td>
            
         </tr>

@@ -31,7 +31,7 @@ public partial class User_Default : System.Web.UI.Page
                     txtbalance.Text = objDash.TotalWallectBlance(SessionData.Get<string>("newuser"));
                     txtcurrentpack.Text = objDash.ReturnLastPackName(SessionData.Get<string>("newuser"));
                     txtcurrentamt.Text = objDash.ReturnLastPackAmt(SessionData.Get<string>("newuser"));
-                    hndpid.Value = objDash.ReturnPackID(SessionData.Get<string>("newuser"));
+                    
 
 
                 }
@@ -87,14 +87,30 @@ public partial class User_Default : System.Web.UI.Page
     protected void Repeater1_ItemCommand(object source, RepeaterCommandEventArgs e)
     {
         string Status = objDash.AccountStatus(SessionData.Get<string>("Newuser"));
+        Label lbproduct = e.Item.FindControl("lbproduct") as Label;
+
+        hndpid.Value = objDash.ReturnPackID(SessionData.Get<string>("newuser"));
+        string id = e.CommandArgument.ToString();
+        int currentPid = Convert.ToInt32(hndpid.Value);
+        int buypid = Convert.ToInt32(id);
         if (e.CommandName == "Click")
         {
-            if (Status == "Not Active")
+            if (Status == "Active")
             {
-                string id = e.CommandArgument.ToString();
-                Label lbproduct = e.Item.FindControl("lbproduct") as Label;
 
-                Response.Redirect("ProductLists.aspx?packid=" + id + "&pack= " + lbproduct.Text.Trim());
+                danger.Visible = false;
+                sccess.Visible = false;
+                if ((currentPid+1)<= buypid)
+                {
+                    Response.Redirect("ProductLists.aspx?packid=" + id + "&pack= " + lbproduct.Text.Trim());
+                }
+                else
+                {
+                    danger.Visible = true;
+                    sccess.Visible = false;
+                    lbdanger.Text = "You cannot purchase this package because your current package is of a higher amount. Please choose a package with a value greater than your current one.";
+
+                }
             }
             else
             {

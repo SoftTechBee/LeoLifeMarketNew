@@ -37,12 +37,11 @@ public partial class User_Default : System.Web.UI.Page
     {
         try
         {
-            string sql = "select * from tblproductsale  where username='" + Username + "' and status='success' and InvoiceNo='"+ InvoiceNo + "' ";
+            string sql = "select *,cast(QTY as int) as QTY from tblproductsale  where username='" + Username + "' and status='success' and InvoiceNo='"+ InvoiceNo + "' ";
             DataTable dt = objcon.ReturnDataTableSql(sql);
             if (dt.Rows.Count > 0)
             {
 
-              //  lbdelivertype.Text = "By Courier";
 
                 Repeater1.DataSource = dt;
                 Repeater1.DataBind();
@@ -63,11 +62,13 @@ public partial class User_Default : System.Web.UI.Page
     {
         try
         {
-            string sql = "select b.*,r.* from tblsalebill b inner join register r on b.username=r.username  where b.username='" + Username + "'   ";
+            string sql = "select cast(b.QTY as int) as QTY,b.*,r.* from tblsalebill b inner join register r on b.username=r.username  where b.username='" + Username + "'   ";
             DataTable dt = objcon.ReturnDataTableSql(sql);
             if (dt.Rows.Count > 0)
             {
+                lbdelivertype.Text = dt.Rows[0]["DeliveryType"].ToString();
 
+                totalQTY.Text = dt.Rows[0]["QTY"].ToString();
                 lbpaystatus.Text = dt.Rows[0]["paid"].ToString();
                 lbusername.Text = dt.Rows[0]["username"].ToString();
                 lbshipname.Text = dt.Rows[0]["name"].ToString();
@@ -96,38 +97,40 @@ public partial class User_Default : System.Web.UI.Page
     {
         try
         {
-            string sql = "select  sum(mrp) as MRP,Count(qty) as qty,sum(price) as DP,sum(bv) as BV,sum(discount) as Discount from [tblproductsale] where username='" + Username + "'  and InvoiceNo='" + InvoiceNo + "'";
+            string sql = "select  sum(GrandToatal) as GrandToatal,sum(mrp) as MRP,Count(qty) as qty ,sum(price) as DP,sum(bv) as BV,sum(discount) as Discount from [tblproductsale] where username='" + Username + "'  and InvoiceNo='" + InvoiceNo + "'";
             DataTable dt = objcon.ReturnDataTableSql(sql);
             if (dt.Rows.Count > 0)
             {
-               
+
+                totalgrand.Text = dt.Rows[0]["GrandToatal"].ToString();
                 lbqty.Text = dt.Rows[0]["qty"].ToString();
                 totalbv.Text = dt.Rows[0]["BV"].ToString();
                 lbtotalBV.Text = dt.Rows[0]["BV"].ToString();
                 totaldiscount.Text = dt.Rows[0]["Discount"].ToString();
                 totaldp.Text = dt.Rows[0]["DP"].ToString();
+                string GrandToatal = dt.Rows[0]["GrandToatal"].ToString();
                 string TotalDP = dt.Rows[0]["DP"].ToString();
                 totalmrp.Text = dt.Rows[0]["MRP"].ToString();
                 
-                Decimal TotalBV = Convert.ToDecimal(lbtotalBV.Text);
-                if(TotalBV  >= 1 && TotalBV <= 500)
-                {
-                    lbgrandtotal.Text = TotalDP;
-                    lbshipping.Text = "free";
-                    lbtotalpayout.Text = (Convert.ToDecimal(TotalDP)).ToString();
-                }
-                else if (TotalBV >= 501 && TotalBV <= 999)
-                {
-                    lbgrandtotal.Text = TotalDP;
-                    lbshipping.Text = "free";
-                    lbtotalpayout.Text = (Convert.ToDecimal(TotalDP)).ToString();
-                }
-                else
-                {
+                //Decimal TotalBV = Convert.ToDecimal(lbtotalBV.Text);
+                //if(TotalBV  >= 1 && TotalBV <= 500)
+                //{
+                //    lbgrandtotal.Text = TotalDP;
+                //    lbshipping.Text = "free";
+                //    lbtotalpayout.Text = (Convert.ToDecimal(TotalDP)).ToString();
+                //}
+                //else if (TotalBV >= 501 && TotalBV <= 999)
+                //{
+                //    lbgrandtotal.Text = TotalDP;
+                //    lbshipping.Text = "free";
+                //    lbtotalpayout.Text = (Convert.ToDecimal(TotalDP)).ToString();
+                //}
+                //else
+                //{
                     lbshipping.Text = "Free";
-                    lbtotalpayout.Text = Convert.ToDecimal(TotalDP).ToString();
-                    lbgrandtotal.Text = TotalDP;
-                }
+                    lbtotalpayout.Text = Convert.ToDecimal(GrandToatal).ToString();
+                    lbgrandtotal.Text = GrandToatal;
+                //}
             }
             else
             {

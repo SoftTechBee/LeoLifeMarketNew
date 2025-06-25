@@ -266,8 +266,8 @@
                                             <asp:Label runat="server" ID="lbinvoice"></asp:Label></h6>
                                         <h6 class="card-title" style="text-align: right; font-size: 10px">Invoice Date :
                                             <asp:Label runat="server" ID="lbdated"></asp:Label></h6>
-                                       <%-- <h6 class="card-title" style="text-align: right; font-size: 10px">Delivery Type :
-                                            <asp:Label runat="server" ID="lbdelivertype"></asp:Label></h6>--%>
+                                        <h6 class="card-title" style="text-align: right; font-size: 10px">Delivery Type :
+                                            <asp:Label CssClass="fw-bold text-danger" runat="server" ID="lbdelivertype"></asp:Label></h6>
 
                                     </div>
 
@@ -392,8 +392,11 @@
                                                             <th>#</th>
                                                             <th>Product Item</th>
                                                             <th>MRP</th>
+                                                             <th>Discount</th>
                                                             <th>DP</th>
-                                                            <th>Discount</th>
+                                                            <th>QTY</th>
+                                                            <th>GrandToatal</th>
+                                                           
                                                             <th>PV</th>
                                                         </tr>
                                                     </thead>
@@ -405,8 +408,11 @@
                                                                     <td><%# Container.ItemIndex+1 %></td>
                                                                     <td><%#Eval("Product") %></td>
                                                                     <td><%#Eval("MRP") %></td>
-                                                                    <td><%#Eval("Price") %></td>
                                                                     <td><%#Eval("Discount") %></td>
+
+                                                                    <td><%#Eval("Price") %></td>
+                                                                    <td><%#Eval("QTY") %></td>
+                                                                    <td><%#Eval("GrandToatal") %></td>
                                                                     <td><%#Eval("BV") %></td>
 
                                                                 </tr>
@@ -423,10 +429,16 @@
                                                             <th>
                                                                 <asp:Label ID="totalmrp" runat="server" Text=""></asp:Label></th>
                                                             <th>
+                                                                <asp:Label ID="totaldiscount" runat="server" Text=""></asp:Label></th>
+                                                           
+                                                            <th>
                                                                 <asp:Label ID="totaldp" runat="server" Text=""></asp:Label></th>
                                                             <th>
-                                                                <asp:Label ID="totaldiscount" runat="server" Text=""></asp:Label></th>
-                                                            <th>
+                                                                <asp:Label ID="totalQTY" runat="server" Text=""></asp:Label></th>
+                                                           <th>
+                                                                <asp:Label ID="totalgrand" runat="server" Text=""></asp:Label></th>
+                                                           
+                                                             <th>
                                                                 <asp:Label ID="totalbv" runat="server" Text=""></asp:Label></th>
 
                                                         </tr>

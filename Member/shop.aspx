@@ -34,7 +34,35 @@
              
              
            </div>
-                 <div class="alert alert-light  dark ">
+              <div class="row">
+                    <div class="col-lg-12">
+                        <div class="card  mb-4 custom-card5" style="border: 1px solid yellow;">
+
+                            <div class="card-body">
+                                <div class="form-horizontal">
+                                    <h5 class="text-warning " style="text-align: right; padding-right: 20px;" runat="server" visible="false" id="lbfund"><a class=" btn  btn-success" href="WalletRecharge.aspx">Add Fund</a></h5>
+                                    <div class="mb-3 row">
+                                        <label class="control-label col-sm-3">Fund Balance </label>
+                                        <div class="col-sm-3">
+                                            <h6>
+                                                <asp:Label ID="txtbalance" runat="server" Text="0"></asp:Label></h6>
+                                        </div>
+                                        <label class="control-label col-sm-3">Current Package </label>
+                                        <div class="col-sm-3">
+
+                                            <h6>
+                                                <asp:Label ID="txtcurrentpack" runat="server" Text="NONE"></asp:Label>
+                                                (<asp:Label ID="txtcurrentamt" CssClass="text-warning" runat="server" Text="0"></asp:Label>)</h6>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+              <asp:HiddenField runat="server"  ID="hndpid" />
+                 <%--<div class="alert alert-light  dark ">
 
                            
                                  <p class="page-title"><b>Products</b></p>
@@ -45,7 +73,7 @@
                        </div>
                       
                            
-                            </div>
+                            </div>--%>
              <div class="row">
                   <asp:Repeater ID="Repeater1" runat="server" OnItemCommand="Repeater1_ItemCommand">
       

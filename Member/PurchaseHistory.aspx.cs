@@ -261,7 +261,7 @@ public partial class User_TopUpWallet : System.Web.UI.Page
                     if (a > 0)
                     {
 
-                        int b = objamd.PRODUCTBILL(0, OTP, SessionData.Get<string>("Newuser"), "", "", Qty, Price, Discount, Price, BV, Price, 0, 0, 0, "", "C");
+                        int b = objamd.PRODUCTBILL(0, OTP, SessionData.Get<string>("Newuser"), "", "", Qty, Price, Discount, Price, BV, Price, 0, 0, 0, drpdeliverytype.SelectedItem.Text, "C");
                         if (b > 0)
                         {
                             danger.Visible = false;

@@ -32,31 +32,31 @@ public partial class User_Default : System.Web.UI.Page
             if (dt.Rows.Count > 0)
             {
                    //Level0
-                    Img1.Src = "../TreeCode/TreeImg/"+ dt.Rows[0]["Img"].ToString();
+                    Img1.Src = "../TreeCode/TreeImg/"+ dt.Rows[0]["packtype"].ToString()+".png";
                     LinkButton1.Text = dt.Rows[0]["UserName"].ToString() + "<br/>" + dt.Rows[0]["Name"].ToString();
                 hnduserid1.Value = dt.Rows[0]["UserName"].ToString();
                 //Level1
-                Img2.Src = "../TreeCode/TreeImg/" + dt.Rows[1]["Img"].ToString();
+                Img2.Src = "../TreeCode/TreeImg/" + dt.Rows[1]["packtype"].ToString() + ".png";
                 LinkButton2.Text = dt.Rows[1]["UserName"].ToString() + "<br/>" + dt.Rows[1]["Name"].ToString();
                 hnduserid2.Value = dt.Rows[1]["UserName"].ToString();
 
-                Img3.Src = "../TreeCode/TreeImg/" + dt.Rows[2]["Img"].ToString();
+                Img3.Src = "../TreeCode/TreeImg/" + dt.Rows[2]["packtype"].ToString() + ".png";
                 LinkButton3.Text = dt.Rows[2]["UserName"].ToString() + "<br/>" + dt.Rows[2]["Name"].ToString();
                 hnduserid3.Value = dt.Rows[2]["UserName"].ToString();
                 //Level2
-                Img4.Src = "../TreeCode/TreeImg/" + dt.Rows[3]["Img"].ToString();
+                Img4.Src = "../TreeCode/TreeImg/" + dt.Rows[3]["packtype"].ToString() + ".png";
                 LinkButton4.Text = dt.Rows[3]["UserName"].ToString()+"<br/>"+ dt.Rows[3]["Name"].ToString() ;
                 hnduserid4.Value = dt.Rows[3]["UserName"].ToString();
 
-                Img5.Src = "../TreeCode/TreeImg/" + dt.Rows[4]["Img"].ToString();
+                Img5.Src = "../TreeCode/TreeImg/" + dt.Rows[4]["packtype"].ToString() + ".png";
                 LinkButton5.Text = dt.Rows[4]["UserName"].ToString()+"<br/>"+ dt.Rows[4]["Name"].ToString() ;
                 hnduserid5.Value = dt.Rows[4]["UserName"].ToString();
 
-                Img6.Src = "../TreeCode/TreeImg/" + dt.Rows[5]["Img"].ToString();
+                Img6.Src = "../TreeCode/TreeImg/" + dt.Rows[5]["packtype"].ToString() + ".png";
                 LinkButton6.Text = dt.Rows[5]["UserName"].ToString() + "<br/>" + dt.Rows[5]["Name"].ToString();
                 hnduserid6.Value = dt.Rows[5]["UserName"].ToString();
 
-                Img7.Src = "../TreeCode/TreeImg/" + dt.Rows[6]["Img"].ToString();
+                Img7.Src = "../TreeCode/TreeImg/" + dt.Rows[6]["packtype"].ToString() + ".png";
                 LinkButton7.Text = dt.Rows[6]["UserName"].ToString() + "<br/>" + dt.Rows[6]["Name"].ToString();
                 hnduserid7.Value = dt.Rows[6]["UserName"].ToString();
 

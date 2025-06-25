@@ -123,38 +123,38 @@
      <div class="container mt-4">
   <div class="row g-3 justify-content-between">
 
-    <div class="col-4 col-sm-4 col-md-2 image-box">
-      <img src="../TreeCode/TreeImg/V.png" alt="Image 1">
+    <div class="col-4 col-sm-4 col-md-2 image-box d-flex">
+      <img src="../TreeCode/TreeImg/Placement.png"  style=" height:50%!important" alt="Image 1">
       <p>Placement</p>
     </div>
 
-    <div class="col-4 col-sm-4 col-md-2 image-box">
-      <img src="../TreeCode/TreeImg/R.png" alt="Image 2">
+    <div class="col-4 col-sm-4 col-md-2 image-box d-flex">
+      <img src="../TreeCode/TreeImg/Registration.png"  style=" height:50%!important" alt="Image 2">
       <p>Registration</p>
     </div>
 
-    <div class="col-4 col-sm-4 col-md-2 image-box">
-      <img src="../TreeCode/TreeImg/G.png" alt="Image 3">
+    <div class="col-4 col-sm-4 col-md-2 image-box d-flex">
+      <img src="../TreeCode/TreeImg/Starter Package.png"  style=" height:50%!important" alt="Image 3">
       <p>Starter</p>
     </div>
 
-    <div class="col-4 col-sm-4 col-md-2 image-box">
-      <img src="../TreeCode/TreeImg/B.png" alt="Image 4">
+    <div class="col-4 col-sm-4 col-md-2 image-box d-flex">
+      <img src="../TreeCode/TreeImg/Distributor Package.png"  style=" height:50%!important" alt="Image 4">
       <p>Distributor</p>
     </div>
 
-    <div class="col-4 col-sm-4 col-md-2 image-box">
-      <img src="../TreeCode/TreeImg/P.png" alt="Image 5">
+    <div class="col-4 col-sm-4 col-md-2 image-box d-flex">
+      <img src="../TreeCode/TreeImg/Leader Package.png"  style=" height:50%!important" alt="Image 5">
       <p>Leader</p>
     </div>
 
-    <div class="col-4 col-sm-4 col-md-2 image-box">
-      <img src="../TreeCode/TreeImg/VI.png" alt="Image 6">
+    <div class="col-4 col-sm-4 col-md-2 image-box d-flex">
+      <img src="../TreeCode/TreeImg/Success Package.png"  style=" height:50%!important" alt="Image 6">
       <p>Success</p>
     </div>
 
-    <div class="col-4 col-sm-4 col-md-2 image-box">
-      <img src="../TreeCode/TreeImg/GO.png" alt="Image 7">
+    <div class="col-4 col-sm-4 col-md-2 image-box d-flex">
+      <img src="../TreeCode/TreeImg/Success Pro Package.png"  style=" height:50%!important" alt="Image 7">
       <p>Success Pro</p>
     </div>
 
