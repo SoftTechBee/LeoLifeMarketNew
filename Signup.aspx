@@ -233,13 +233,13 @@
                                  <asp:TextBox ID="drpcode"   required=""  runat="server" class="form-control" Text="+1" ReadOnly="true"></asp:TextBox>
                                  </div>
                                   <div class="col-lg-9">
-                                 <asp:TextBox ID="txtMobile"  onkeypress="if ( isNaN(this.value + String.fromCharCode(event.keyCode) )) return false;"  onkeyup="doKeyUpValidation(this)"    required="" MaxLength="10" runat="server" class="form-control" placeholder="Enter Mobile"></asp:TextBox>
+                                 <asp:TextBox ID="txtMobile"  OnTextChanged="txtMobile_TextChanged" AutoPostBack="true" onkeypress="if ( isNaN(this.value + String.fromCharCode(event.keyCode) )) return false;"  onkeyup="doKeyUpValidation(this)"    required="" MaxLength="10" runat="server" class="form-control" placeholder="Enter Mobile"></asp:TextBox>
          </div>
                             </div>
                              <asp:Label ID="lbmobileMsg" runat="server" Visible="false" CssClass=" text-warning"></asp:Label>
                            <div class="mb-1">
                                 <label for="email" class="form-label">Email</label>
-                                <asp:TextBox ID="txtemail" Type="email"  required=""   runat="server" class="form-control" placeholder="Enter Email"></asp:TextBox>
+                                <asp:TextBox ID="txtemail" type="email"  required=""  OnTextChanged="txtemail_TextChanged" AutoPostBack="true"  runat="server" class="form-control" placeholder="Enter Email"></asp:TextBox>
                                  
                             </div>
                             <asp:Label ID="lbEmailMsg" runat="server" Visible="false" CssClass=" text-warning"></asp:Label>

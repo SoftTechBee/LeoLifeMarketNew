@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Member/MasterPage.master" AutoEventWireup="true" CodeFile="PurchaseHistory.aspx.cs" Inherits="User_TopUpWallet" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Member/MasterPage.master" AutoEventWireup="true" CodeFile="PurchaseHistoryRepurchase.aspx.cs" Inherits="User_TopUpWallet" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
     
@@ -37,7 +37,7 @@
               
                 <div class="row">
                     <div class="col-12 align-self-center">
-                        <h5 class="page-title">My Cart</h5>
+                        <h5 class="page-title">Repurchase Cart</h5>
                     </div>
                  
                 </div>
@@ -59,12 +59,12 @@
                 ₹<asp:label ID="txtbalance"     runat="server"  Text="0" ></asp:label>
       
     </div>
-<%--    <label class="col-lg-2 col-md-2 col-xs-6 col-sm-6">Coupan Wallet  </label>
+    <label class="col-lg-2 col-md-2 col-xs-6 col-sm-6">Coupan Wallet  </label>
     <div class="ccol-lg-3 col-md-3  text-primary col-xs-6 col-sm-6">
       
                 ₹<asp:label ID="txtcoupanbalance"     runat="server"  Text="0" ></asp:label>
       
-    </div>--%>
+    </div>
               
                
 </div>
@@ -77,7 +77,7 @@
                 <tr>
                     <th >#</th>
                   <th> Name</th>
-                     <th> PV</th>
+                     <%--<th> PV</th>--%>
             
                    <th> MRP</th>
                   <th> Discount</th>
@@ -98,7 +98,7 @@
         <tr>
             <td> <%# Container.ItemIndex+1 %></td>
              <td>  <asp:Label ID="lbProduct" runat="server" Text='<%#Eval("Product") %>'></asp:Label></td>
-               <td> <%#Eval("BV") %></td>
+               <%--<td> <%#Eval("BV") %></td>--%>
             
             <td> <%#Eval("MRP") %></td>
              <td> <%#Eval("Discount") %></td>
@@ -118,7 +118,7 @@
                 <tr>
                        <th ></th>
                        <th >Total</th>
-                               <th><asp:Label ID="totalbv" runat="server" Text=""></asp:Label></th>
+                               <%--<th><asp:Label ID="totalbv" runat="server" Text=""></asp:Label></th>--%>
 
                   <th><asp:Label ID="totalmrp" runat="server" Text=""></asp:Label></th>
                   <th> <asp:Label ID="totaldiscount" runat="server" Text=""></asp:Label></th>
@@ -137,10 +137,10 @@
             </div>
     </div>
                                 <div class="row" style="justify-content:right">
-                                    <div class="cart-sub-total  total">
+                                 <%--   <div class="cart-sub-total  total">
 						Total BV: <span><asp:Label ID="lbtotalBV" runat="server" Text="0"></asp:Label></span>
                                           <hr />
-					</div>
+					</div>--%>
                                   
                    <div class="cart-sub-total total">
 						<span>Payment Status:</span> <span><asp:Label ID="lbpaystatus" runat="server" Text="Un-Paid"></asp:Label></span>
@@ -149,7 +149,7 @@
 						<span>Package Name:</span> <span><asp:Label ID="lbpackeg" runat="server"  CssClass="text-primary"></asp:Label></span>
 					</div>
                                    
-                        <div class="cart-sub-total total">
+                               <div class="cart-sub-total total">
     <span>Delivery Type:<br /></span>
                                     <hr />
     <span>
@@ -160,7 +160,8 @@
         </asp:RadioButtonList>
     </span>
 </div>
-<br />
+<br />      
+
                     <div class="col-md-4 col-sm-12 cart-shopping-total">
 	<table class="table">
 		<thead>
@@ -181,9 +182,9 @@
   <div class="cart-sub-total  total" style="text-align:right">
 						Fund Wallet: &nbsp&nbsp&nbsp&nbsp<span class="inner-left-md"><i class="fa  fa-rupee" style="color:forestgreen"></i><asp:Label ID="lbfundwallet" CssClass="text-success" runat="server" Text="0"></asp:Label></span>
 					</div>
- <%-- <div class="cart-sub-total  total" style="text-align:right">
+  <div class="cart-sub-total  total" style="text-align:right">
 						Coupan Wallet: &nbsp&nbsp&nbsp&nbsp<span class="inner-left-md"><i class="fa  fa-rupee" style="color:forestgreen"></i><asp:Label ID="lbcoupanwallet" CssClass="text-success" runat="server" Text="0"></asp:Label></span>
-					</div>--%>
+					</div>
 
 				</th>
 			</tr>
@@ -194,13 +195,12 @@
 </div>
                 </div>
                               <br />  
-                                <%-- <div class="cart-sub-total total">
+                               <%--  <div class="cart-sub-total total">
 						<span>Delivery Type:</span> <span> <asp:DropDownList ID="drpdeliverytype" runat="server" Width="40%"  CssClass="mt-2 text-primary form-control">
-                            <asp:ListItem >Self Pickup</asp:ListItem>
+                            <asp:ListItem >Store Pickup</asp:ListItem>
                             <asp:ListItem >Home Delivery</asp:ListItem>
 						                                   </asp:DropDownList></span>
 					</div>--%>
-                               
                                 
                  <div class="col-sm-12" style="text-align:right;">
                
@@ -209,8 +209,8 @@
                                   <asp:Button ID="btncheckout" OnClick="btncheckout_Click" OnClientClick="return confirmAction();"  runat="server" Text="Pay Now"   class=" btn btn-warning" />
                                         </div>
 </div>
-                                <hr /><p style="color: red;font-size:100% ">
-                                    <%--Note1: For Home Delivery, an additional charge of ₹100/- should be applied.<br />--%>
+                                  <hr /><p style="color: red;font-size:100% ">
+                                    Note1: For Home Delivery, an additional charge of ₹100/- should be applied.<br />
   Note2: Home Delivery selected?. Please make sure your address is complete. Go to Edit Profile to add or update it before making the purchase.
 </p>
             </div>

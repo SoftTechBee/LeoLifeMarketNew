@@ -32,17 +32,34 @@ public partial class User_Default : System.Web.UI.Page
             if (dt.Rows.Count > 0)
             {
                    //Level0
-                    Img1.Src = "../TreeCode/TreeImg/"+ dt.Rows[0]["packtype"].ToString()+".png";
-                    LinkButton1.Text = dt.Rows[0]["UserName"].ToString() + "<br/>" + dt.Rows[0]["Name"].ToString();
+                 Img1.Src = "../TreeCode/TreeImg/"+ dt.Rows[0]["packtype"].ToString()+".png";
+                 LinkButton1.Text = dt.Rows[0]["UserName"].ToString() + "<br/>" + dt.Rows[0]["Name"].ToString();
                 hnduserid1.Value = dt.Rows[0]["UserName"].ToString();
+                //if (hnduserid1.Value == "0")
+                //{
+                //    hreflink.Visible = true;
+                //    hreflink.HRef = "https://leolife.live/register.aspx?Sponsor=" + hnduserid1 + "&Side=Left";
+                //}
                 //Level1
                 Img2.Src = "../TreeCode/TreeImg/" + dt.Rows[1]["packtype"].ToString() + ".png";
-                LinkButton2.Text = dt.Rows[1]["UserName"].ToString() + "<br/>" + dt.Rows[1]["Name"].ToString();
+                 LinkButton2.Text = dt.Rows[1]["UserName"].ToString() + "<br/>" + dt.Rows[1]["Name"].ToString();                
                 hnduserid2.Value = dt.Rows[1]["UserName"].ToString();
+                //if (hnduserid2.Value == "0")
+                //{
+                //    hreflink.Visible = true;
+                //    hreflink.HRef = "https://leolife.live/register.aspx?Sponsor=" + hnduserid1 + "&Side=Left";
+                //}
 
                 Img3.Src = "../TreeCode/TreeImg/" + dt.Rows[2]["packtype"].ToString() + ".png";
                 LinkButton3.Text = dt.Rows[2]["UserName"].ToString() + "<br/>" + dt.Rows[2]["Name"].ToString();
                 hnduserid3.Value = dt.Rows[2]["UserName"].ToString();
+
+
+                //if (hnduserid3.Value == "0")
+                //{
+                //    hreflink.Visible = true;
+                //    hreflink.HRef = "https://leolife.live/register.aspx?Sponsor=" + hnduserid1 + "&Side=Right";
+                //}
                 //Level2
                 Img4.Src = "../TreeCode/TreeImg/" + dt.Rows[3]["packtype"].ToString() + ".png";
                 LinkButton4.Text = dt.Rows[3]["UserName"].ToString()+"<br/>"+ dt.Rows[3]["Name"].ToString() ;
@@ -100,20 +117,38 @@ public partial class User_Default : System.Web.UI.Page
         catch (Exception ex)
         { }
     }
+    private void ReferralID(string Sponsor,string Username)
+    {
+        
+            Response.Redirect("https://leolife.live/register.aspx?Sponsor=" + Sponsor + "&Side=Left", false);
+        
+    }
 
     protected void LinkButton1_Click(object sender, EventArgs e)
     {
         LoadTree(hnduserid1.Value);
+       
     }
 
     protected void LinkButton2_Click(object sender, EventArgs e)
     {
         LoadTree(hnduserid2.Value);
+        //if (hnduserid2.Value == "0")
+        //{
+        //    ReferralID(hnduserid1.Value, hnduserid2.Value);
+        //}
+
     }
 
     protected void LinkButton3_Click(object sender, EventArgs e)
     {
         LoadTree(hnduserid3.Value);
+        //if (hnduserid3.Value == "0")
+        //{
+        //    ReferralID(hnduserid1.Value, hnduserid3.Value);
+        //}
+
+       
     }
 
     protected void LinkButton4_Click(object sender, EventArgs e)

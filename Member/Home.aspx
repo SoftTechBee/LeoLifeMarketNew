@@ -1,7 +1,41 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Member/MasterPage.master" AutoEventWireup="true" CodeFile="Home.aspx.cs" Inherits="Member_Default" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
+    <style>
+    .kyc-box {
+      border-top: 5px solid orange;
+      background-color: #fff;
+      border-radius: 10px;
+      padding: 15px 20px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      display: flex;
+      align-items: center;
+      font-family: Arial, sans-serif;
+    }
 
+    .kyc-icon {
+      color: red;
+      font-size: 24px;
+      margin-right: 15px;
+    }
+
+    .kyc-text {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .kyc-text span {
+      font-size: 14px;
+      color: #555;
+    }
+
+    .kyc-text .status {
+      color: red;
+      font-weight: bold;
+      font-size: 16px;
+    }
+  </style>
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 
     <div class="row">
 
@@ -80,7 +114,21 @@
                 </asp:Label></span></h6>
 
     </marquee>
+     <div class="kyc-box">
+    <div class="kyc-icon">
+  <%--  <i runat="server" id="icnss" class="fas fa-times-circle" style="color:red; "></i>
 
+        <i runat="server" id="icnSuccess" class="fas fa-check-circle" style="color:green;"></i>--%>
+
+        <i runat="server" id="iconcss" class="fas fa-hourglass-half" style="color:orange; "></i>
+
+    </div>
+    <div class="kyc-text">
+      <span>KYC STATUS</span>
+      <span class="status"><asp:Label runat="server" ID="lbkycstatus" Text="Pending"></asp:Label></span>
+    </div>
+  </div>
+    <br />
     <div class="row">
         <div class="col-12 col-lg-6 col-xl-6 mb-4">
             <div class="card adminuiux-card position-relative overflow-hidden bg-theme-1 h-100">
@@ -592,7 +640,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-12 col-sm-3 col-lg-3 col-xl-3 mb-4">
+           <%-- <div class="col-12 col-sm-3 col-lg-3 col-xl-3 mb-4">
                 <div class="card adminuiux-card">
                     <div class="card-body border-top rounded-1 border-warning border-5 ">
                         <h3 class="text-secondary small mb-1"><img src="../assets/images/apps/salary.png" alt="icon" style="height:30px; width:30px;" class="me-1" />Total Withdraw</h3>
@@ -605,7 +653,7 @@
                         </span>
                     </div>
                 </div>
-            </div>
+            </div>--%>
                <%--<div class="col-12 col-sm-3 col-lg-3 col-xl-3 mb-4">
                 <div class="card adminuiux-card">
                     <div class="card-body">

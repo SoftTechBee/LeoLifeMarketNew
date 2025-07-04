@@ -246,11 +246,11 @@
                             </a>
                         </div>
 
-                  <%--      <div class="nav-item">
-                            <a href="ShopRepurchase.aspx?Id=0" class="nav-link">
+                        <div class="nav-item">
+                            <a href="ProductListsRepurchase.aspx" class="nav-link">
                                 <i class="menu-icon bi bi-dot"></i> <span class="menu-name">Re-Purchase</span>
                             </a>
-                        </div>--%>
+                        </div>
                        <div class="nav-item">
                             <a href="PackageHistory.aspx" class="nav-link">
                                 <i class="menu-icon bi bi-dot"></i> <span class="menu-name">Package History</span>
@@ -545,10 +545,15 @@
     </main>
 
 <div class="position-fixed bottom-0 end-0 m-3 z-index-5">
-    <button class="btn btn-square btn-theme shadow" type="button"
+    <a class="btn btn-success btn-square shadow" href="https://wa.me/917330904422" target="_blank" title="WhatsApp Support">
+    <i class="bi bi-whatsapp"></i>
+</a>
+
+   <%-- <button class="btn btn-square btn-theme shadow" type="button"
             data-bs-toggle="offcanvas" data-bs-target="#theming" aria-controls="theming">
         <i class="bi bi-palette"></i>
-    </button><br><button class="btn btn-theme btn-square rounded-circle shadow mt-2 d-none" id="backtotop">
+    </button>
+  --%>  <br><button class="btn btn-theme btn-square rounded-circle shadow mt-2 d-none" id="backtotop">
         <i class="bi bi-arrow-up"></i>
     </button>
 </div>

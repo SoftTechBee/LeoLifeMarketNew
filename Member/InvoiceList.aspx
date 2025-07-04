@@ -38,6 +38,7 @@
                 <tr>
                     <th >#</th>
                   <th>UserName</th>
+                  <th>Type&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</th>
                   <th>InvoiceDate</th>
                    <th>InvoiceNumber</th>
                    <th>Total Product</th>
@@ -60,6 +61,7 @@
         <tr>
             <td> <%# Container.ItemIndex+1 %></td>
                  <td><asp:label ID="lbusername" runat="server" Text='<%#Eval("UserName") %>'></asp:label></td>
+                 <td><asp:label ID="Type" CssClass="text-primary fw-bold"  runat="server" Text='<%#Eval("Type") %>'></asp:label></td>
               <td><%#DataBinder.Eval(Container.DataItem, "DOI", "{0:dd/MM/yyyy}")%></td>
              <td> <%#Eval("InvoiceNo") %></td>
              <td> <%#Eval("qty") %></td>

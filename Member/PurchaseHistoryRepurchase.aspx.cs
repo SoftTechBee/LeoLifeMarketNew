@@ -30,7 +30,7 @@ public partial class User_TopUpWallet : System.Web.UI.Page
                 loadTotal(SessionData.Get<string>("Newuser"));
                 loadaccount(SessionData.Get<string>("Newuser"));
                 txtbalance.Text = objDash.TotalWallectBlance(SessionData.Get<string>("Newuser"));
-               // txtcoupanbalance.Text = objDash.CoupanWallectBlance(SessionData.Get<string>("Newuser"));
+               txtcoupanbalance.Text = objDash.CoupanWallectBlance(SessionData.Get<string>("Newuser"));
 
                 calcu();
 
@@ -44,30 +44,30 @@ public partial class User_TopUpWallet : System.Web.UI.Page
         {
             decimal GrandTotal = 0, CoupanBalne = 0, HalfAmount = 0, coupnaShow = 0, Coreprise = 0;
 
-            // Parse the input values
+            //Parse the input values
             GrandTotal = Convert.ToDecimal(lbgrandtotal.Text);
-            //CoupanBalne = Convert.ToDecimal(txtcoupanbalance.Text);
+            CoupanBalne = Convert.ToDecimal(txtcoupanbalance.Text);
 
-            //// Perform calculations
-            //HalfAmount = GrandTotal / 2;
-            //if (HalfAmount >= CoupanBalne)
-            //{
-            //    coupnaShow = CoupanBalne;
-            //}
-            //else if (CoupanBalne >= HalfAmount)
-            //{
-            //    coupnaShow = HalfAmount;
-            //}
-            //else
-            //{
-            //    coupnaShow = 0;
-            //}
+            // Perform calculations
+            HalfAmount = GrandTotal / 2;
+            if (HalfAmount >= CoupanBalne)
+            {
+                coupnaShow = CoupanBalne;
+            }
+            else if (CoupanBalne >= HalfAmount)
+            {
+                coupnaShow = HalfAmount;
+            }
+            else
+            {
+                coupnaShow = 0;
+            }
 
-            //decimal mainAmount = GrandTotal - coupnaShow;
-            decimal mainAmount = GrandTotal ;
+            decimal mainAmount = GrandTotal - coupnaShow;
+            //decimal mainAmount = GrandTotal;
 
             lbfundwallet.Text = mainAmount.ToString();
-            //lbcoupanwallet.Text = coupnaShow.ToString();
+            lbcoupanwallet.Text = coupnaShow.ToString();
 
         }
         catch (Exception ex)
@@ -82,7 +82,7 @@ public partial class User_TopUpWallet : System.Web.UI.Page
     {
         try
         {
-            string sql = "select   cast (qty as int) as qty ,* from [tblproductsale] where username='" + username + "' and status='Pending' and type='Purchase'";
+            string sql = "select   cast (qty as int) as qty ,* from [tblproductsale] where username='" + username + "' and status='Pending' and type='Re-Purchase'";
             DataTable dt = objcon.ReturnDataTableSql(sql);
             if (dt.Rows.Count > 0)
             {
@@ -92,27 +92,7 @@ public partial class User_TopUpWallet : System.Web.UI.Page
                 hndpack.Value = dt.Rows[0]["product"].ToString();
                 hndpackeg.Value = dt.Rows[0]["Pack"].ToString();
                 //hndpackid.Value = dt.Rows[0]["Packid"].ToString();
-                lbpackeg.Text = hndpackeg.Value.Trim();
-                if (lbpackeg.Text == "Starter Package")
-                {
-                    hndpv.Value = "1";
-                }
-                else if (lbpackeg.Text == "Distributor Package")
-                {
-                    hndpv.Value = "2";
-                }
-               else if (lbpackeg.Text == "Leader Package")
-                {
-                    hndpv.Value = "4";
-                }
-               else if (lbpackeg.Text == "Success Package")
-                {
-                    hndpv.Value = "8";
-                }
-               else if (lbpackeg.Text == "Success Pro Package")
-                {
-                    hndpv.Value = "24";
-                }
+               
                 
             }
             else
@@ -136,21 +116,21 @@ public partial class User_TopUpWallet : System.Web.UI.Page
     {
         try
         {
-            string sql = "select sum(mrp) as MRP,SUM(CAST(qty AS INT)) AS qty,sum(price) as DP,sum(bv) as BV,sum(discount) as Discount ,sum(GrandToatal) as GrandToatal from [tblproductsale] where username='" + username + "' and status='Pending' and type='Purchase'";
+            string sql = "select sum(mrp) as MRP,SUM(CAST(qty AS INT)) AS qty,sum(price) as DP,sum(bv) as BV,sum(discount) as Discount ,sum(GrandToatal) as GrandToatal from [tblproductsale] where username='" + username + "' and status='Pending' and type='Re-Purchase'";
             DataTable dt = objcon.ReturnDataTableSql(sql);
             if (dt.Rows.Count > 0)
             {
               
                 lbgrand.Text = dt.Rows[0]["GrandToatal"].ToString();
                 lbqty.Text = dt.Rows[0]["qty"].ToString();
-                totalbv.Text = dt.Rows[0]["BV"].ToString();
+                //totalbv.Text = dt.Rows[0]["BV"].ToString();
               totaldiscount.Text = dt.Rows[0]["Discount"].ToString();
                 totaldp.Text = dt.Rows[0]["DP"].ToString();
                totalmrp.Text = dt.Rows[0]["MRP"].ToString();
-                Decimal TotalBV = Convert.ToDecimal(totalbv.Text);
+               // Decimal TotalBV = Convert.ToDecimal(totalbv.Text);
                 Decimal qty = Convert.ToDecimal(lbqty.Text);
 
-                lbtotalBV.Text = (TotalBV ).ToString();
+                ///lbtotalBV.Text = (0 ).ToString();
 
 
               
@@ -223,33 +203,33 @@ public partial class User_TopUpWallet : System.Web.UI.Page
 
             decimal widamount = 0, Price = 0, BV = 0, Qty = 0, coupan = 0, Discount = 0, PVLimit = 0, Shipcharge = 0;
             string date = objtime.returnStringServerMachTime();
-            string PackType = hndpackeg.Value;
+            string PackType = "Re-Purchase";
             string id = SessionData.Get<string>("Newuser");
             decimal finalamount = Convert.ToDecimal(txtbalance.Text.Trim());
 
             Price = (Convert.ToDecimal(lbgrandtotal.Text.Trim()));
-            BV = (Convert.ToDecimal(totalbv.Text.Trim()));
-            PVLimit = (Convert.ToDecimal(hndpv.Value.Trim()));
+            BV = (Convert.ToDecimal(0));
+            //PVLimit = (Convert.ToDecimal(hndpv.Value.Trim()));
             Qty = (Convert.ToDecimal(lbqty.Text.Trim()));
             // Discount = (Convert.ToDecimal(totaldiscount.Text.Trim()));
-         //   coupan = (Convert.ToDecimal(lbcoupanwallet.Text.Trim()));
+            coupan = (Convert.ToDecimal(lbcoupanwallet.Text.Trim()));
             Shipcharge = (Convert.ToDecimal(lbshipping.Text.Trim()));
 
-            if (PVLimit == BV && PVLimit!=0)
-            {
+            //if (PVLimit == BV && PVLimit!=0)
+            //{
 
-                string OTP = OTPGenerate();
+            string OTP = OTPGenerate();
 
 
                 if (finalamount >= Price)
                 {
 
 
-                    int a = objamd.ActiveMember(id, Price, Shipcharge, PackType, SessionData.Get<string>("Newuser"), "N");
-                    if (a > 0)
-                    {
+                int a = objamd.ActiveMember(id, Price, Shipcharge, PackType, SessionData.Get<string>("Newuser"), "R");
+                if (a > 0)
+                {
 
-                        int b = objamd.PRODUCTBILL(0, OTP, SessionData.Get<string>("Newuser"), Shipcharge.ToString(), "Purchase", Qty, Price, Discount, Price, BV, Price, 0, 0, 0, rblDeliveryType.SelectedValue, "C");
+                    int b = objamd.PRODUCTBILL(0, OTP, SessionData.Get<string>("Newuser"), "", "Re-Purchase", Qty, Price, Discount, Price, BV, Price, 0, 0, 0,  rblDeliveryType.SelectedValue, "C");
                         if (b > 0)
                         {
                             danger.Visible = false;
@@ -257,24 +237,24 @@ public partial class User_TopUpWallet : System.Web.UI.Page
                             danger.Visible = false;
                             sccess.Visible = true;
                             info.Visible = false;
-                            lbsuccess.Text = "Your Payment Has Been Succesully .! Please Check Out In Invoice List";
-                            //string Username = SessionData.Get<string>("newuser");
-                            //Response.Redirect("Billview.aspx?username=" + Username);
+                        lbsuccess.Text = "Your Payment Has Been Succesully .! Please Check Out In Invoice List";
+                        //string Username = SessionData.Get<string>("newuser");
+                        //Response.Redirect("Billview.aspx?username=" + Username);
 
-                            loadTotal(SessionData.Get<string>("Newuser"));
+                        loadTotal(SessionData.Get<string>("Newuser"));
                             loadaccount(SessionData.Get<string>("Newuser"));
                             txtbalance.Text = objDash.TotalWallectBlance(SessionData.Get<string>("Newuser"));
-                            //txtcoupanbalance.Text = objDash.CoupanWallectBlance(SessionData.Get<string>("Newuser"));
+                        //txtcoupanbalance.Text = objDash.CoupanWallectBlance(SessionData.Get<string>("Newuser"));
 
-                            SessionData.Put("StatusCSS", "text-success");
-                            calcu();
-                            string Name = objDash.RetrunName(SessionData.Get<string>("Newuser"));
-                            string Email = objDash.ReturnEmail(SessionData.Get<string>("Newuser"));
+                        SessionData.Put("StatusCSS", "text-success");
+                        calcu();
+                       string Name = objDash.RetrunName(SessionData.Get<string>("Newuser"));
+                       string Email = objDash.ReturnEmail(SessionData.Get<string>("Newuser"));
 
-                            objmail.ProductBuy(Name, SessionData.Get<string>("Newuser"), Price.ToString(), OTP, Email);
+                        objmail.ProductBuy(Name, SessionData.Get<string>("Newuser"),  Price.ToString(), OTP, Email);
 
-                        }
-                        else if (b == -1)
+                    }
+                    else if (b == -1)
                         {
 
 
@@ -292,18 +272,18 @@ public partial class User_TopUpWallet : System.Web.UI.Page
                         }
 
 
-                    }
-                    else if (a == -1)
-                    {
-
-                        warning.Visible = false;
-                        danger.Visible = false;
-                        sccess.Visible = false;
-
-                        info.Visible = true;
-                        lbinfo.Text = "You have already Payment ";
-                    }
                 }
+                else if (a == -1)
+                {
+
+                    warning.Visible = false;
+                    danger.Visible = false;
+                    sccess.Visible = false;
+
+                    info.Visible = true;
+                    lbinfo.Text = "You have already Payment ";
+                }
+            }
                 else
                 {
 
@@ -314,16 +294,16 @@ public partial class User_TopUpWallet : System.Web.UI.Page
                     info.Visible = true;
                     lbinfo.Text = "Less Then Balance! ";
                 }
-            }
-            else
-            {
+            //}
+            //else
+            //{
 
-                warning.Visible = false;
-                danger.Visible = false;
-                sccess.Visible = false;
-                info.Visible = true;
-                lbinfo.Text = "PV Should Be "+ PVLimit + " For Package: "+lbpackeg.Text+" ";
-            }
+            //    warning.Visible = false;
+            //    danger.Visible = false;
+            //    sccess.Visible = false;
+            //    info.Visible = true;
+            //    lbinfo.Text = "PV Should Be "+ PVLimit + " For Package: "+lbpackeg.Text+" ";
+            //}
         }
 
 
@@ -337,7 +317,42 @@ public partial class User_TopUpWallet : System.Web.UI.Page
 
         }
     }
+    protected void rblDeliveryType_SelectedIndexChanged(object sender, EventArgs e)
+    {
+        lbgrandtotal.Text = lbgrand.Text;
 
+        decimal Total = Convert.ToDecimal(lbgrandtotal.Text);
+        if (Total < 1000)
+        {
+            if (rblDeliveryType.SelectedValue == "Home Delivery")
+            {
+                lbshipping.Text = "100";
+                lbtotalpayout.Text = (Convert.ToDecimal(lbgrand.Text) + 100).ToString();
+                lbfundwallet.Text = (Convert.ToDecimal(lbfundwallet.Text) + 50).ToString();
+                lbcoupanwallet.Text = (Convert.ToDecimal(lbcoupanwallet.Text) + 50).ToString();
+            }
+
+            else
+            {
+                lbshipping.Text = "0";
+                lbtotalpayout.Text = Convert.ToDecimal(lbgrand.Text).ToString();
+                lbfundwallet.Text = (Convert.ToDecimal(lbfundwallet.Text) + 0).ToString();
+                lbcoupanwallet.Text = (Convert.ToDecimal(lbcoupanwallet.Text) + 0).ToString();
+
+
+            }
+        }
+        else
+        {
+            lbshipping.Text = "0";
+            lbtotalpayout.Text = Convert.ToDecimal(lbgrand.Text).ToString();
+            lbfundwallet.Text = (Convert.ToDecimal(lbfundwallet.Text) + 0).ToString();
+            lbcoupanwallet.Text = (Convert.ToDecimal(lbcoupanwallet.Text) + 0).ToString();
+
+
+        }
+
+    }
     protected void Repeater1_ItemCommand(object source, RepeaterCommandEventArgs e)
     {
         if (e.CommandName == "remove")
@@ -354,27 +369,6 @@ public partial class User_TopUpWallet : System.Web.UI.Page
 
 
 
-
-
-        }
-    }
-
-    protected void rblDeliveryType_SelectedIndexChanged(object sender, EventArgs e)
-    {
-        if (rblDeliveryType.SelectedValue== "Home Delivery")
-        {
-            lbgrandtotal.Text = lbgrand.Text;
-            lbshipping.Text = "0";
-            lbtotalpayout.Text = (Convert.ToDecimal(lbgrand.Text) + 100).ToString();
-            lbfundwallet.Text = (Convert.ToDecimal(lbfundwallet.Text) + 100).ToString();
-        }
-        
-        else
-        {
-            lbshipping.Text = "0";
-            lbtotalpayout.Text = Convert.ToDecimal(lbgrand.Text).ToString();
-            lbgrandtotal.Text = lbgrand.Text;
-            lbfundwallet.Text = (Convert.ToDecimal(lbfundwallet.Text) + 0).ToString();
 
 
         }

@@ -48,10 +48,11 @@ public partial class Login : System.Web.UI.Page
                 else
                 {
                     lbmsg.Visible = true;
-                    lbmsg.Text = "your income limit exceeded,please contact to admin";
+                    lbmsg.Text = "Your account was blocked. 72 hours have passed. Please contact the admin.";
                     txtPassword.Text = "";
                     txtUserName.Text = "";
-                    Response.Write("<script>alert('your income limit exceeded, please contact to admin')</script>");
+                    Response.Write("<script>alert('Your account was blocked. 72 hours have passed. Please contact the admin.')</script>");
+
                 }
             }
             else

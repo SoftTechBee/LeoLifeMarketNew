@@ -69,7 +69,7 @@ public partial class User_Default : System.Web.UI.Page
     {
         try
         {
-            string sql = "select count(qty) as qty from [tblproductsale] where username='" + SessionData.Get<string>("Newuser") + "' and status='Pending'";
+            string sql = "select count(qty) as qty from [tblproductsale] where username='" + SessionData.Get<string>("Newuser") + "' and status='Pending' and type='Purchase'";
             DataTable dt = objcon.ReturnDataTableSql(sql);
             if (dt.Rows.Count > 0)
             {
@@ -101,7 +101,7 @@ public partial class User_Default : System.Web.UI.Page
                 Label lbbv = e.Item.FindControl("lbbv") as Label;
 
 
-                int b = objamd.PRODUCTBILL(0, lbproduct.Text, SessionData.Get<string>("Newuser"),lbpack.Text, hndpackid.Value, Convert.ToInt32(lbqty.SelectedItem.Text), Convert.ToDecimal(lbmrp.Text), 0, Convert.ToDecimal(lbDP.Text), Convert.ToDecimal(lbbv.Text), Convert.ToDecimal(lbDP.Text), 0, 0, 0, "", "N");
+                int b = objamd.PRODUCTBILL(0, lbproduct.Text, SessionData.Get<string>("Newuser"),lbpack.Text, hndpackid.Value, Convert.ToInt32(lbqty.SelectedItem.Text), Convert.ToDecimal(lbmrp.Text), 0, Convert.ToDecimal(lbDP.Text), Convert.ToDecimal(lbbv.Text), Convert.ToDecimal(lbDP.Text), 0, 0, 0, "Purchase", "N");
                 if (b > 0)
                 {
 

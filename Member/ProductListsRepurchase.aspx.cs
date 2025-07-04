@@ -42,13 +42,15 @@ public partial class User_Default : System.Web.UI.Page
     {
         try
         {
-            string packid = Request.QueryString["packid"].ToString();
-            string pack = Request.QueryString["pack"].ToString();
-            string sql = "select cast(SoldRate as int) as SoldRate,* from TblProductDetails where packid='"+ packid + "' and packagename='"+ pack.Trim() + "'";
+            //string packid = Request.QueryString["packid"].ToString();
+            //string pack = Request.QueryString["pack"].ToString();
+
+            string sql = "select * from TblProductDetails ";
             DataTable dt = objcon.ReturnDataTableSql(sql);
             if (dt.Rows.Count > 0)
             {
-               
+                //lbpack.Text = pack;
+                //hndpackid.Value = packid;
             }
             else
             {
@@ -67,10 +69,11 @@ public partial class User_Default : System.Web.UI.Page
     {
         try
         {
-            string sql = "select count(qty) as qty from [tblproductsale] where username='" + SessionData.Get<string>("Newuser") + "' and status='Pending'";
+            string sql = "select count(qty) as qty from [tblproductsale] where username='" + SessionData.Get<string>("Newuser") + "' and status='Pending' and Type='Re-Purchase'";
             DataTable dt = objcon.ReturnDataTableSql(sql);
             if (dt.Rows.Count > 0)
             {
+
                 lbcart.InnerText = dt.Rows[0]["qty"].ToString();
             }
            
@@ -88,16 +91,17 @@ public partial class User_Default : System.Web.UI.Page
 
         if (e.CommandName == "Click")
         {
-            if(Status=="Not Active")
-            {
+            ////if(Status=="Not Active")
+            //{
                 string id = e.CommandArgument.ToString();
+                DropDownList lbqty = e.Item.FindControl("lbqty") as DropDownList;
                 Label lbproduct = e.Item.FindControl("lbproduct") as Label;
                 Label lbmrp = e.Item.FindControl("lbmrp") as Label;
                 Label lbDP = e.Item.FindControl("lbDP") as Label;
                 Label lbbv = e.Item.FindControl("lbbv") as Label;
 
 
-                int b = objamd.PRODUCTBILL(0, lbproduct.Text, SessionData.Get<string>("Newuser"), "By Courier", "", 1, Convert.ToDecimal(lbmrp.Text), 0, Convert.ToDecimal(lbDP.Text), Convert.ToDecimal(lbbv.Text), Convert.ToDecimal(lbDP.Text), 0, 0, 0, "", "N");
+                int b = objamd.PRODUCTBILL(0, lbproduct.Text, SessionData.Get<string>("Newuser"),"Re-Purchase", "0", Convert.ToInt32(lbqty.SelectedItem.Text), Convert.ToDecimal(lbmrp.Text), 0, Convert.ToDecimal(lbDP.Text), Convert.ToDecimal(lbbv.Text), Convert.ToDecimal(lbDP.Text), 0, 0, 0, "Re-Purchase", "N");
                 if (b > 0)
                 {
 
@@ -123,14 +127,14 @@ public partial class User_Default : System.Web.UI.Page
 
                 }
 
-            }
-            else
-            {
-                danger.Visible = true;
-                sccess.Visible = false;
-                lbdanger.Text = "You can purchase this product only once..!!";
+            //}
+            //else
+            //{
+            //    danger.Visible = true;
+            //    sccess.Visible = false;
+            //    lbdanger.Text = "You can purchase this product only once..!!";
 
-            }
+            //}
 
 
 

@@ -271,13 +271,15 @@
               <div class="menu-title">Financial</div>
             </a>
             <ul>
-            <li><a href="PayoutUnpaid.aspx"><i class="material-icons-outlined">arrow_right</i>Payout UnPaid</a>
+            <li><a href="PayoutUnpaid.aspx"><i class="material-icons-outlined">arrow_right</i>Bank Verification List</a>
               </li>
           
-               <li><a href="PayoutPaid.aspx"><i class="material-icons-outlined">arrow_right</i>Paided Payout</a>
-              </li>
+             
               
-                <li><a href="PayoutUnpaidtoPaid.aspx"><i class="material-icons-outlined">arrow_right</i>PaidNow List</a>
+                <li><a href="PayoutUnpaidtoPaid.aspx"><i class="material-icons-outlined">arrow_right</i>Pending Payout</a>
+              </li>
+
+                  <li><a href="PayoutPaid.aspx"><i class="material-icons-outlined">arrow_right</i>Paided Payout</a>
               </li>
             </ul>
           </li>

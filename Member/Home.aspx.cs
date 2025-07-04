@@ -30,6 +30,7 @@ public partial class Member_Default : System.Web.UI.Page
                 loadDownLineBusniess();
                 loadBuiness();
                 loadTeam();
+                loadkyc();
                 string username = SessionData.Get<string>("Newuser");
 
                 myInput.Value = "https://leolife.live/register.aspx?Sponsor=" + username + "&Side=Left";
@@ -51,7 +52,7 @@ public partial class Member_Default : System.Web.UI.Page
                 //lbtotalrepurchase.Text = objdashboard.SelfBusiness(username);
 
 
-                lbwithdrawapprove.Text = objdashboard.WithdrawType(username, "Approved", "INCOME");
+                //lbwithdrawapprove.Text = objdashboard.WithdrawType(username, "Approved", "INCOME");
 
 
                 lblDirectRefer.Text = objdashboard.IncomeType(username, "DIRECT");
@@ -69,6 +70,58 @@ public partial class Member_Default : System.Web.UI.Page
             Response.Redirect("logout.aspx");
         }
 
+    }
+    private void loadkyc()
+    {
+        try
+        {
+            string sql = "select  IsStatus,AdhaarFrontRemarks,PanRemarks from tblkyc  where username='" + SessionData.Get<string>("Newuser") + "'";
+            DataTable dt = objcon.ReturnDataTableSql(sql);
+
+            if (dt.Rows.Count > 0)
+            {
+
+               
+              string Status = dt.Rows[0]["IsStatus"].ToString();
+                if (Status == "1") // Success
+                {
+                    iconcss.Attributes["class"] = "fas fa-check-circle";
+                    iconcss.Style["color"] = "green";
+                    lbkycstatus.Style["color"] = "green";
+                    lbkycstatus.Text = "Success (Congratlations!)";
+                }
+                else if (Status == "3") // Rejected
+                {
+                    iconcss.Attributes["class"] = "fas fa-times-circle";
+                    iconcss.Style["color"] = "red";
+                    lbkycstatus.Style["color"] = "red";
+                    lbkycstatus.Text = "Rejected (Check Reason Remarks)";
+
+                }
+                else if (Status == "2") // Pending
+                {
+                    iconcss.Attributes["class"] = "fas fa-hourglass-half";
+                    iconcss.Style["color"] = "orange";
+                    lbkycstatus.Style["color"] = "orange";
+                    lbkycstatus.Text = "Pending (please Wait to Verify!)";
+
+                }
+
+
+
+            }
+            else 
+            {
+                iconcss.Attributes["class"] = "fas fa-hourglass-half";
+                iconcss.Style["color"] = "orange";
+                lbkycstatus.Style["color"] = "orange";
+                lbkycstatus.Text = "Pending (Update your KYC Details?)";
+
+            }
+
+        }
+        catch (Exception ex)
+        { }
     }
 
     private void loadDownLineBusniess()

@@ -212,7 +212,8 @@
                         <tr>
                             <td align="center">
                                  <asp:LinkButton ID="LinkButton2" CauseValidation="false"  OnClick="LinkButton2_Click" runat="server"></asp:LinkButton>
-                               
+                             <%-- <a runat="server" visible=" false" class=" text-danger" id="hreflink" href='https://leolife.live/register.aspx?Sponsor=LM100001&Side=Left' target='_blank'>Registration?</a>--%>
+
                                 <br />
                             </td>
                             <td align="center">
