@@ -93,7 +93,12 @@ public partial class User_TopUpWallet : System.Web.UI.Page
                 hndpackeg.Value = dt.Rows[0]["Pack"].ToString();
                 //hndpackid.Value = dt.Rows[0]["Packid"].ToString();
                 lbpackeg.Text = hndpackeg.Value.Trim();
-                if (lbpackeg.Text == "Starter Package")
+                if (lbpackeg.Text == "Economy Package")
+                {
+                    hndpv.Value = "0.5";
+                }
+
+                else if (lbpackeg.Text == "Starter Package")
                 {
                     hndpv.Value = "1";
                 }

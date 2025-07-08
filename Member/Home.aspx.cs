@@ -24,6 +24,7 @@ public partial class Member_Default : System.Web.UI.Page
             {
 
 
+               
 
 
                 loadlist();
@@ -128,7 +129,7 @@ public partial class Member_Default : System.Web.UI.Page
     {
         try
         {
-            string sql = "select doa,reward,rankname,mobile,status,username,email,dateofjoin,name,rankname,joinAmount,country,PackType from register  where username='" + SessionData.Get<string>("Newuser") + "'";
+            string sql = "select doa,reward,rankname,mobile,status,username,email,dateofjoin,name,rankname,joinAmount,country,PackType,CONVERT(DATETIME, FORMAT(DATEADD(DAY, 3, dateofjoin), 'yyyy-MM-dd') + ' 12:00:00') AS After3Days from register  where username='" + SessionData.Get<string>("Newuser") + "'";
             DataTable dt = objcon.ReturnDataTableSql(sql);
 
             if (dt.Rows.Count > 0)
@@ -147,7 +148,19 @@ public partial class Member_Default : System.Web.UI.Page
                 //lbtotalrepurchase.Text = dt.Rows[0]["joinAmount"].ToString();
 
                 lbstatus.Text = dt.Rows[0]["status"].ToString();
-
+               
+                if(lbstatus.Text=="Not Active")
+                {
+                    DateTime after3Days = Convert.ToDateTime(dt.Rows[0]["After3Days"]);
+                    string timerDate1 = after3Days.ToString("yyyy-MM-dd HH:mm:ss");
+                    timerDate.InnerText = timerDate1; // 'timerDate' is the ID of <span runat="server">
+                }
+                else
+                {
+                    activetitle.Visible = false;
+                  //  countdown.Visible = false;
+                }
+               
 
 
 

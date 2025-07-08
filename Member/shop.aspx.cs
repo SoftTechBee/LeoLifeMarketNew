@@ -46,7 +46,7 @@ public partial class User_Default : System.Web.UI.Page
     {
         try
         {
-            string sql = "select cast(SoldRate as int) as SoldRate,* from TblProductMaster ";
+            string sql = "select * from TblProductMaster order by mrp asc ";
             DataTable dt = objcon.ReturnDataTableSql(sql);
             if (dt.Rows.Count > 0)
             {

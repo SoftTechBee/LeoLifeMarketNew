@@ -238,6 +238,8 @@
               </li> 
            <li><a href="OTPListDelivered.aspx"><i class="material-icons-outlined">arrow_right</i>Delivery Success</a>
               </li> 
+           <li><a href="Popup.aspx"><i class="material-icons-outlined">arrow_right</i>Popup Master</a>
+              </li> 
               
              
                 

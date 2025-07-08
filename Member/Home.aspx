@@ -35,7 +35,38 @@
       font-size: 16px;
     }
   </style>
+    
      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+<!-- Timer value from server -->
+<span id="timerDate" runat="server" style="display: none;"></span>
+
+<!-- Countdown Display -->
+
+
+<script>
+    // Get date from span tag by ID
+    var timerEndDate = document.getElementById("ContentPlaceHolder1_timerDate").innerText.trim();
+    var endDate = new Date(timerEndDate.replace(' ', 'T'));
+
+    var timerInterval = setInterval(function () {
+        var now = new Date().getTime();
+        var distance = endDate.getTime() - now;
+        if (distance < 0) {
+            clearInterval(timerInterval);
+            document.getElementById("countdown").innerHTML = "⏰ Time's Up!";
+            return;
+        }
+
+        var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+        document.getElementById("countdown").innerHTML =
+            `⏳ ${days}d ${hours}h ${minutes}m ${seconds}s`;
+    }, 1000);
+</script>
+
 
     <div class="row">
 
@@ -138,7 +169,11 @@
                 <div class="card-body z-index-1">
                     <div class="row align-items-center justify-content-center h-100 py-4">
                         <div class="col-11">
-                       <%--     <h4 class="fw-normal">Your Available Income</h4>
+                            <div runat="server" id="activetitle" visible="true">
+                            <h4  class="fw-normal">Activation Time</h4>
+                            <div id="countdown"  style="font-size: 22px; font-weight: bold; color: black;"></div>
+                  </div>
+                                <hr />    <%--     <h4 class="fw-normal">Your Available Income</h4>
                             <h1 class="mb-3">₹<asp:Label ID="lbbalance" runat="server" Text="0"></asp:Label></h1>--%>
                             <p>Date Of Join: <span class="badge  badge-sm text-bg-warning">
                                 <asp:Label ID="lbDOJ" runat="server" Text="N/A"></asp:Label></span></p>

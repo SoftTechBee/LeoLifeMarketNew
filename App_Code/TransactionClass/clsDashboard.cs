@@ -1056,6 +1056,23 @@ public class clsDashboard
 
         return total;
     }
+    public string ReturnPopImg()
+    {
+        string PopImg = "";
+        try
+        {
+            string sql = "select top 1 Img from tblpopup order by Pid desc";
+            DataTable dt = objcon.ReturnDataTableSql(sql);
+            if (dt.Rows.Count > 0)
+            {
+                PopImg = dt.Rows[0][0].ToString();
+            }
+
+        }
+        catch (Exception ex)
+        { }
+        return PopImg;
+    }
     public string SameUPI(string UPI)
     {
         string total = "0";

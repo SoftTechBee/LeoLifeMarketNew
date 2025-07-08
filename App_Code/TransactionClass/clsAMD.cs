@@ -841,23 +841,7 @@ namespace TripleITTransaction
         }
         #endregion
        
-         #region Related to SET Slider
-        public int Slider(int Sid, string Title,string Username,string Image, decimal Amount, string Day, string Status, string Remark, string Transaction)
-        {
-
-            SqlParameter ptmSid = new SqlParameter("@Sid", Sid);
-            SqlParameter ptmTitle = new SqlParameter("@Title", Title);
-            SqlParameter ptmUsername = new SqlParameter("@Username", Username);
-            SqlParameter ptmImage = new SqlParameter("@Image", Image);
-            SqlParameter ptmAmount = new SqlParameter("@Amount", Amount);
-            SqlParameter ptmDay = new SqlParameter("@Day", Day);
-            SqlParameter ptmStatus = new SqlParameter("@Status", Status);
-            SqlParameter ptmRemark = new SqlParameter("@Remark", Remark);
-            SqlParameter ptmTransaction = new SqlParameter("@Transaction", Transaction);
-            int status = ObjConnection.ExecuteProcedure("[SliderMaster]", ptmSid, ptmTitle, ptmUsername, ptmImage, ptmAmount, ptmDay, ptmStatus, ptmRemark, ptmTransaction);
-            return status;
-        }
-        #endregion
+        
         public int ProductMaster(int PID, string ProductName, decimal ProductAmt, decimal ProductBV, string ProductDesc, string ProductImg, string Transaction)
         {
             SqlParameter ptrPID = new SqlParameter("@PID", PID);
@@ -1054,6 +1038,23 @@ namespace TripleITTransaction
             int status = ObjConnection.ExecuteProcedure("PowerLeg", ptmPID, ptmUsername, ptmPower, ptmRemark, ptmTransaction);
             return status;
         }
+        
+        public int Slider(int Sid, string Title, string Username, string Image, decimal Amount, string Day, string Status, string Remark, string Transaction)
+        {
+
+            SqlParameter ptmSid = new SqlParameter("@Sid", Sid);
+            SqlParameter ptmTitle = new SqlParameter("@Title", Title);
+            SqlParameter ptmUsername = new SqlParameter("@Username", Username);
+            SqlParameter ptmImage = new SqlParameter("@Image", Image);
+            SqlParameter ptmAmount = new SqlParameter("@Amount", Amount);
+            SqlParameter ptmDay = new SqlParameter("@Day", Day);
+            SqlParameter ptmStatus = new SqlParameter("@Status", Status);
+            SqlParameter ptmRemark = new SqlParameter("@Remark", Remark);
+            SqlParameter ptmTransaction = new SqlParameter("@Transaction", Transaction);
+            int status = ObjConnection.ExecuteProcedure("[SliderMaster]", ptmSid, ptmTitle, ptmUsername, ptmImage, ptmAmount, ptmDay, ptmStatus, ptmRemark, ptmTransaction);
+            return status;
+        }
+        
         public int KYCUPI(string Username, string UPI, string QRCode, string Transaction)
         {
             SqlParameter ptmUsername = new SqlParameter("@UserName", Username);

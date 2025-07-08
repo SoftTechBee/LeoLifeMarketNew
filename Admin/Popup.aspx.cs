@@ -45,8 +45,10 @@ public partial class Admin_Popup : System.Web.UI.Page
                         {
                             // Print Original Size of file (Height or Width)   
                             string ss = image.Size.ToString();
-                            int newWidth = 600; // New Width of Image in Pixel  
-                            int newHeight = 300; // New Height of Image in Pixel  
+                            int newWidth = image.Width;
+                            int newHeight = image.Height;
+                            //int newWidth = 600; // New Width of Image in Pixel  
+                            //int newHeight = 300; // New Height of Image in Pixel  
                             var thumbImg = new Bitmap(newWidth, newHeight);
                             var thumbGraph = Graphics.FromImage(thumbImg);
                             thumbGraph.CompositingQuality = CompositingQuality.HighQuality;
