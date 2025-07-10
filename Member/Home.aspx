@@ -170,8 +170,8 @@
                     <div class="row align-items-center justify-content-center h-100 py-4">
                         <div class="col-11">
                             <div runat="server" id="activetitle" visible="true">
-                            <h4  class="fw-normal">Activation Time</h4>
-                            <div id="countdown"  style="font-size: 22px; font-weight: bold; color: black;"></div>
+                            <h4  class="fw-normal text-warning">Activation Time Left</h4>
+                            <div id="countdown"  style="font-size: 30px; font-weight: bold; color:white;"></div>
                   </div>
                                 <hr />    <%--     <h4 class="fw-normal">Your Available Income</h4>
                             <h1 class="mb-3">₹<asp:Label ID="lbbalance" runat="server" Text="0"></asp:Label></h1>--%>

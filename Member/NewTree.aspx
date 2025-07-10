@@ -132,8 +132,16 @@
       <img src="../TreeCode/TreeImg/Registration.png"  style=" height:50%!important" alt="Image 2">
       <p>Registration</p>
     </div>
+   <div class="col-4 col-sm-4 col-md-2 image-box d-flex">
+      <img src="../TreeCode/TreeImg/Dectivated.png"  style=" height:50%!important" alt="Image 2">
+      <p>Dectivated</p>
+    </div>
 
     <div class="col-4 col-sm-4 col-md-2 image-box d-flex">
+      <img src="../TreeCode/TreeImg/Economy Package.png"  style=" height:50%!important" alt="Image 3">
+      <p>Economy</p>
+    </div>
+ <div class="col-4 col-sm-4 col-md-2 image-box d-flex">
       <img src="../TreeCode/TreeImg/Starter Package.png"  style=" height:50%!important" alt="Image 3">
       <p>Starter</p>
     </div>

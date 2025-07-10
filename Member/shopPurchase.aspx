@@ -99,7 +99,7 @@
                             
                                        
                                     <div class="p-0 text-center">
-                                          <td> <asp:Button ID="Button1" runat="server" Text="Select Package" CssClass="btn btn-warning " CommandArgument='<%#Eval("pid") %>' CommandName="Click" /> </td>
+                                          <td> <asp:Button ID="Button1" runat="server" Text="Select Package" CssClass="btn btn-warning " CommandArgument='<%#Eval("packid") %>' CommandName="Click" /> </td>
 											</div>
                                 </div>
                             </div>

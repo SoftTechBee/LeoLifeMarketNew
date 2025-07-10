@@ -189,6 +189,8 @@
               </li>
               <li><a href="setnews.aspx"><i class="material-icons-outlined">arrow_right</i>Set News</a>
               </li>
+              <li><a href="setgalery.aspx"><i class="material-icons-outlined">arrow_right</i>Set Gallery URL</a>
+              </li>
              
               <li><a href="BlockMember.aspx"><i class="material-icons-outlined">arrow_right</i>Blocked Member</a>
               </li>

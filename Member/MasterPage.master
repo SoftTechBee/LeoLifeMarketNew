@@ -531,17 +531,17 @@
                     <div class="dropdown-menu">
                   
                         <div class="nav-item">
-                            <a href="#" class="nav-link">
+                            <a href="#" runat="server" id="hrefCertificate" target="_blank" class="nav-link">
                                 <i class="menu-icon bi bi-dot"></i> <span class="menu-name">Certificate</span>
                             </a>
                         </div>
                   <div class="nav-item">
-                            <a href="#" class="nav-link">
+                            <a href="#" runat="server" id="hrefPlan"  target="_blank" class="nav-link">
                                 <i class="menu-icon bi bi-dot"></i> <span class="menu-name">Business Plan</span>
                             </a>
                         </div>
                   <div class="nav-item">
-                            <a href="#" class="nav-link">
+                            <a href="#" runat="server" id="hrefCatalogue"  target="_blank" class="nav-link">
                                 <i class="menu-icon bi bi-dot"></i> <span class="menu-name">Product Catalogue</span>
                             </a>
                         </div>

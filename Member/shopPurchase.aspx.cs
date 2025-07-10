@@ -46,7 +46,7 @@ public partial class User_Default : System.Web.UI.Page
     {
         try
         {
-            string sql = "select cast(SoldRate as int) as SoldRate,* from TblProductMaster ";
+            string sql = "select * from TblProductMaster order by mrp asc ";
             DataTable dt = objcon.ReturnDataTableSql(sql);
             if (dt.Rows.Count > 0)
             {
@@ -91,8 +91,8 @@ public partial class User_Default : System.Web.UI.Page
 
         hndpid.Value = objDash.ReturnPackID(SessionData.Get<string>("newuser"));
         string id = e.CommandArgument.ToString();
-        int currentPid = Convert.ToInt32(hndpid.Value);
-        int buypid = Convert.ToInt32(id);
+        decimal currentPid = Convert.ToDecimal(hndpid.Value);
+        decimal buypid = Convert.ToDecimal(id);
         if (e.CommandName == "Click")
         {
             if (Status == "Active")
